@@ -1,0 +1,5 @@
+﻿exports.run = async(client, message, args) => {
+
+    client.user.setPresence({ game: { name: "k!help | kikbot-.glitch.me", type:  2} });
+
+    }
