@@ -1,6 +1,6 @@
 exports.run = (client, message, args)  => {
 
-    if (if(args.join(' ').length > 100)) {
+    if(args.join(' ') > 100)) {
         message.channel.send(`Opa, acho que mais de 100 não posso!`)
     } else {
         if(!args[0]) return message.reply(`Coloque algum número depois do comando :x:`)
