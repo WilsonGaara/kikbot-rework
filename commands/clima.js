@@ -65,7 +65,7 @@ const config = {
   
   const accuweatherSimple = require('accuweather-simple')(config);
 
-  message.channel.send('**QUER SABER MAIS?**\nReaja => :white_check_mark:').then(newMsg => {
+  message.channel.send('**QUER SABER MAIS?**\nReaja => :white_check_mark: (O AccuWeather pode não encontrar a cidade pois a busca de MSN e AccuWeather são diferentes)').then(newMsg => {
       newMsg.react('✅');
       const collector = newMsg.createReactionCollector((r, u) => (r.emoji.name === '✅') && u.id !== client.user.id);
     
@@ -75,7 +75,7 @@ const config = {
               case '✅':
               const Discord = require('discord.js');
             accuweatherSimple.getWeather(`${args.join(` `)}`).then(result => newMsg.edit('**Previsão, olhar para o futuro** \n`'+ result+'`'))
-            .catch(error =>message.channel.send('<:err:449743511391305748> **|** '+message.author+' O AccuWeather não encontrou a cidade, exibindo apenas informações da MSN Weather.')); 
+            
 
         //Oops! O AccuWeather não conseguiu encontrar a cidade. Enquanto isso só está as informações de MSN
         
