@@ -14,7 +14,7 @@ exports.run = (client, message, args)  => {
             let messagecount = parseInt
 message.channel.bulkDelete(args[0])
 
-.catch(error => message.reply(`<:err:449743511391305748> **|** Oops! Você excedeu o limite de mensagens para serem excluidas, eu acho. Outras causas:\nVocê não colocou um número.\nO número é negativo.\nE uma infinidade de erros.`);
+.catch(error => message.reply(`<:err:449743511391305748> **|** Oops! Você excedeu o limite de mensagens para serem excluidas, eu acho. Outras causas:\nVocê não colocou um número.\nO número é negativo.\nE uma infinidade de erros.`))
  message.channel.send(`:rocket: **|** Foram deletadas **${args.join(' ')}** mensagens.`);
 
     }
