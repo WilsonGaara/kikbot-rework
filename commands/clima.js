@@ -56,11 +56,12 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
     if(current.temperature > 27) return message.reply(`:warning: Temperatura elevada!`);
         if(current.temperature < 18) return message.reply(`:warning: Temperatura baixa :snowflake: `);
 // Aqui vai enviar a msg pra o canal onde o comando foi executado!
-});
+
 const config = {
     apikey: "kTC0LP5MCeSkcYUBogj7UeeApGcDbK7d",
     language: "pt-br"
   };
+
   
   const accuweatherSimple = require('accuweather-simple')(config);
 
@@ -82,8 +83,8 @@ const config = {
               break;
            
         };
-          
-        });
+    });
+});
           
   //accuweatherSimple.getWeather(`${args.join(` `)}`).then(result => message.reply('**Previsão, olhar para o futuro** \n` '+ result))
           
@@ -93,4 +94,6 @@ const config = {
 
       }};
 
-   
+  
+
+       
