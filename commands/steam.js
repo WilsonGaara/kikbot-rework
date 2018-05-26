@@ -8,7 +8,7 @@ exports.run = (client, message, args)  => {
         steam.getUserSummary(id).then(summary => {
     const embed = new Discord.RichEmbed()
     .setAuthor(summary.nickname)
-.setThumbnail(summary.avatar)
+.setThumbnail(summary.avatar.large)
 .setColor('GOLD')
 .setDescription(':date: | Data de criação: '+moment(summary.created).format(`LLL`)+'\nUltimo logOFF: '+moment(summary.lastLogOff).format(`LLL`))
 .setFooter(`ID do usuário: ${summary.steamID} | kikbot-`)
