@@ -9,8 +9,8 @@ exports.run = (client, message, args)  => {
     const embed = new Discord.RichEmbed()
     .setAuthor(summary.nickname)
 .setThumbnail(summary.avatar.large)
-.setColor('GOLD')
-.setDescription('Permissão de comentário: '+summary.commentPermission)
+.setColor('BLUE')
+
 .setFooter(`ID do usuário: ${summary.steamID} | kikbot-`)
 message.channel.send({embed: embed});
 });
