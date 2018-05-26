@@ -91,4 +91,4 @@ client.on("message", message => {
     console.error(err);
   }
 })
-client.login(config.token)
+client.login(process.env.BOT_TOKEN)
