@@ -13,9 +13,9 @@ exports.run = (client, message, args)  => {
             if  (!message.member.hasPermissions(["MANAGE_MESSAGES"])) return message.reply("**Você não tem a permissão para usar isto!**");
             let messagecount = parseInt
 message.channel.bulkDelete(args[0])
- message.channel.send(`:rocket: **|** Foram deletadas **${args.join(' ')}** mensagens.`);
-.catch(error => message.reply(`<:err:449743511391305748> **|** Oops! Você excedeu o limite de mensagens para serem excluidas, eu acho. Outras causas:\nVocê não colocou um número.\nO número é negativo.\nE uma infinidade de erros.`);
 
+.catch(error => message.reply(`<:err:449743511391305748> **|** Oops! Você excedeu o limite de mensagens para serem excluidas, eu acho. Outras causas:\nVocê não colocou um número.\nO número é negativo.\nE uma infinidade de erros.`);
+ message.channel.send(`:rocket: **|** Foram deletadas **${args.join(' ')}** mensagens.`);
 
     }
 
