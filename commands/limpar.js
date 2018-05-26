@@ -5,7 +5,7 @@ exports.run = (client, message, args)  => {
     const embed2 = new Discord2.RichEmbed()
 .setAuthor(message.author.tag, message.author.displayAvatarURL)
 .setColor('BLUE')
-.setDescription(':thinking: | k!limpara\nApague algumas mensagens de um canal de texto!\n\n:information_desk_person: **Como usar:** k!limpar <quantia.de.mensagens>\n\n:book: **Exemplo:**\nk!limpar `50')
+.setDescription(':thinking: | k!limpar\nApague algumas mensagens de um canal de texto!\n\n:information_desk_person: **Como usar:** k!limpar <quantia.de.mensagens>\n\n:book: **Exemplo:**\nk!limpar `50`')
     .setFooter(`Utilitários • Website: kikbot-.glitch.me`, message.author.displayAvatarURL)
     if(args.length < 1) return message.channel.send({embed : embed2});
   
