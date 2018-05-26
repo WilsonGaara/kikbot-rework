@@ -10,7 +10,7 @@ exports.run = (client, message, args)  => {
     .setAuthor(summary.nickname)
 .setThumbnail(summary.avatar.large)
 .setColor('GOLD')
-.setDescription(':date: | Data de criação: '+moment(summary.created).format(`LLL`)+'\nUltimo logOFF: '+moment(summary.lastLogOff).format(`LLL`))
+.setDescription('Permissão de comentário: '+summary.commentPermission)
 .setFooter(`ID do usuário: ${summary.steamID} | kikbot-`)
 message.channel.send({embed: embed});
 });
