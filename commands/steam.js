@@ -14,10 +14,12 @@ exports.run = (client, message, args)  => {
 message.channel.send({embed: embed});
 		steam.resolve(args.join(' ')).then(id2 => {
 		steam.getUserOwnedGames(id2).then(jogo => {
-let string = `https://store.steampowered.com/app/`
-for(var i = 0;i < jogo.appID;i++){
-   string  + `${jogo.appID}` + `\n`;
-};
+      let string = ''
+      for(var i = 0;i < jogo;i++){
+         string  += `https://store.steampowered.com/app/${jogo.appID}`;
+      }
+      
+
 		message.reply(string)
 });
 });
