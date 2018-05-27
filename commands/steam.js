@@ -13,7 +13,7 @@ exports.run = (client, message, args)  => {
 .setFooter(`ID do usuário: ${summary.steamID} | kikbot-`)
 message.channel.send({embed: embed});
 		steam.resolve(args.join(' ')).then(id2 => {
-		steam.getUserFriends(id2).then(jogo => {
+		steam.getUserOwnedGames(id2).then(jogo => {
 message.reply(jogo.nickname)
 			console.log(jogo)
 			console.log(jogo.nickname)
