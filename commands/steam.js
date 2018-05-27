@@ -16,12 +16,9 @@ message.channel.send({embed: embed});
 		steam.getUserOwnedGames(id2).then(jogo => {
 let string = ''
 for(var i = 0;i < jogo.appID;i++){
-   string  += `https://store.steampowered.com/app/${jogo.array(appID)}` + `\n`;
-message.reply(string)
-
-			console.log(jogo)
-      console.log(jogo.nickname)
+   string  += `https://store.steampowered.com/app/${jogo.array()[i].appID}` + `\n`;
 };
+		message.reply(string)
 });
 });
     });
