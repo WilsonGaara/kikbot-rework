@@ -13,11 +13,16 @@ exports.run = (client, message, args)  => {
 .setFooter(`ID STEAM do usuário: ${summary.steamID} | kikbot-`)
 message.channel.send({embed: embed});
 		steam.getUserRecentGames(id).then(games => {
-			console.log(games)
-      const jogos = games.map(g =>+'https://store.steampowered.com/app/'+g.appID).join("\n")
-      message.reply(jogos)
+      const jogos = games.map(g => g.name).join("\n")
+      const Discord2 = require('discord.js')
+      const embed2 = new Discord2.RichEmbed()
+   .setAuthor('Jogos recentes de: '+summary.nickname, games.iconURL)
+   .setDescription(`:white_check_mark: **|** Aqui está a lista de jogos recentes:\n${jogos}`)
+   .setImage(games.logoURL)
+   .setTimestamp()
+   .setFooter('kikbot- | Steam', client.user.avatarURL)
+  message.channel.send({embed: embed});
 });
 });
     });
                };
-              
