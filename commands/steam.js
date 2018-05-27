@@ -17,5 +17,5 @@ message.channel.send({embed: embed});
 message.reply(jogo)
 });
 });
-};
+    });
 				       });
