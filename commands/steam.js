@@ -15,8 +15,8 @@ message.channel.send({embed: embed});
 		steam.resolve(args.join(' ')).then(id2 => {
 		steam.getUserOwnedGames(id2).then(jogo => {
 let string = ''
-for(var i = 0;i < message.guild.roles.size;i++){
-   string  += `https://store.steampowered.com/app/${jogo.array()[i].appID}` + `\n`;
+for(var i = 0;i < jogo.appID;i++){
+   string  += `https://store.steampowered.com/app/${jogo.appID}` + `\n`;
 message.reply(string)
 
 			console.log(jogo)
