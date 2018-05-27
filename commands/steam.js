@@ -10,13 +10,15 @@ exports.run = (client, message, args)  => {
     .setAuthor(summary.nickname)
 .setThumbnail(summary.avatar.large)
 .setColor('BLUE')
-steam.resolve(args.join(' ')).then(id2 => {
 .setFooter(`ID do usuário: ${summary.steamID} | kikbot-`)
 message.channel.send({embed: embed});
+		steam.resolve(args.join(' ')).then(id2 => {
 		steam.getUserFriends(id2).then(jogo => {
 message.reply(jogo.nickname)
 			console.log(jogo)
+			console.log(jogo.nickname)
 });
 });
     });
-				       };
+               });
+              };
