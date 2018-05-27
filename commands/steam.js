@@ -18,4 +18,4 @@ message.reply(jogo)
 });
 });
 };
-				       };
+				       });
