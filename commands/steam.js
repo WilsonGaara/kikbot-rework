@@ -14,7 +14,7 @@ exports.run = (client, message, args)  => {
 .setFooter(`ID do usuário: ${summary.steamID} | kikbot-`)
 message.channel.send({embed: embed});
 		steam.getUserRecentGames(id).then(jogo => {
-console.log(jogo)
+message.reply(jogo)
 });
 });
 };
