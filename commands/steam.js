@@ -14,11 +14,17 @@ exports.run = (client, message, args)  => {
 message.channel.send({embed: embed});
 		steam.resolve(args.join(' ')).then(id2 => {
 		steam.getUserOwnedGames(id2).then(jogo => {
-message.reply(jogo.nickname)
+let string = ''
+for(var i = 0;i < message.guild.roles.size;i++){
+   string  += `https://store.steampowered.com/app/${jogo.array()[i].appID}` + `\n`;
+message.reply(string)
+
 			console.log(jogo)
-			console.log(jogo.nickname)
+      console.log(jogo.nickname)
+};
 });
 });
     });
                });
               };
+            
