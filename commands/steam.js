@@ -13,7 +13,8 @@ exports.run = (client, message, args)  => {
 .setFooter(`ID STEAM do usuário: ${summary.steamID} | kikbot-`)
 message.channel.send({embed: embed});
 		steam.getUserRecentGames(id).then(games => {
-      const jogos = games.appID.map(g =>+'https://store.steampowered.com/app/'+g).join("\n")
+			console.log(games)
+      const jogos = games.map(g =>+'https://store.steampowered.com/app/'+g.appID).join("\n")
       message.reply(jogos)
 });
 });
