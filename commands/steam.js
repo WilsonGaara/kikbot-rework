@@ -21,8 +21,9 @@ message.channel.send({embed: embed});
    .setImage(games.logoURL)
    .setTimestamp()
    .setFooter('kikbot- | Steam', client.user.avatarURL)
-  message.channel.send({embed: embed});
+  message.channel.send({embed: embed2});
 });
 });
     });
                };
+              
