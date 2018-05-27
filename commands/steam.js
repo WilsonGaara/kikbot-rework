@@ -1,3 +1,8 @@
+const SteamAPI = require('steamapi');
+const Discord = require('discord.js')
+const steam = new SteamAPI(process.env.STEAM);
+const moment = require('moment');
+	   moment.locale('pt-BR');  
 exports.run = (client, message, args)  => {
     steam.resolve(args.join(' ')).then(id => {
         steam.getUserSummary(id).then(summary => {
@@ -7,8 +12,8 @@ exports.run = (client, message, args)  => {
 .setColor('BLUE')
 .setFooter(`ID STEAM do usuário: ${summary.steamID} | kikbot-`)
 message.channel.send({embed: embed});
-		getUserRecentGames(id).then(games => {
-      const jogos = games.appID.map(g =>+'https://store.steampowered.com/app/'+g).join("\n")
+		steam.getUserRecentGames(id).then(games => {
+      const jogos = games.appID.map(g =>+'https://store.steampowered.com/app/444090/'+g).join("\n")
 });
 });
     });
