@@ -17,27 +17,21 @@ message.channel.send({embed: embed});
 
 		steam.getUserRecentGames(id).then(games => {
    
-      function afkchannel(){
+     
         const afk = games.map(g => g.name).join("\n")
-        if(afk.length < 1){
-        return afk;
-        }else{
-            return "<:err:449743511391305748> **|** Não detectei nenhum jogo recente.";
-        }
+ 
       const Discord2 = require('discord.js')
       const embed2 = new Discord2.RichEmbed()
    .setAuthor('Jogos recentes de: '+summary.nickname, games.iconURL)
-   .setDescription(`:white_check_mark: **|** Aqui está a lista de jogos recentes:\n${afkchannel()}`)
+   .setDescription(`:white_check_mark: **|** Aqui está a lista de jogos recentes:\n${afk}`)
    .setImage(games.logoURL)
    .setTimestamp()
    .setFooter('kikbot- | Steam', client.user.avatarURL)
   message.channel.send({embed: embed2});
-        
-};
+
+  
       
 });
     });
   });
 };
-              
-
