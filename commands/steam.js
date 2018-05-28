@@ -16,9 +16,9 @@ exports.run = (client, message, args)  => {
 message.channel.send({embed: embed});
 
 		steam.getUserRecentGames(id).then(games => {
-      const jogos = games.map(g => g.name).join("\n")
+   
       function afkchannel(){
-        var afk = jogos;
+        const afk = games.map(g => g.name).join("\n")
         if(afk.length < 1){
         return afk;
         }else{
@@ -27,7 +27,7 @@ message.channel.send({embed: embed});
       const Discord2 = require('discord.js')
       const embed2 = new Discord2.RichEmbed()
    .setAuthor('Jogos recentes de: '+summary.nickname, games.iconURL)
-   .setDescription(`:white_check_mark: **|** Aqui está a lista de jogos recentes:\n${jogos}`)
+   .setDescription(`:white_check_mark: **|** Aqui está a lista de jogos recentes:\n${afkchannel()}`)
    .setImage(games.logoURL)
    .setTimestamp()
    .setFooter('kikbot- | Steam', client.user.avatarURL)
