@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 var translate = require('google-translate-api');
 
-// Isso vai detectar quais são as línguas disponíveis. 
+
 var langs = {
     'af': 'Afrikaans',
     'sq': 'Albanian',
@@ -110,34 +110,21 @@ var langs = {
 };
 
 exports.run = (bot, message, args) => {
-    const moment = require('moment');
-    moment.locale('pt-BR');   
     if(args.length <= 1) {
         if(args[0] === 'lista') {
-            message.channel.sendMessage(':mag_right: | Esta é a lista de idiomas disponíveis.\n\n`' + Object.keys(langs).join('` `') + '`')
+            message.channel.sendMessage(':mag_right: **|** Esta é a lista de idiomas disponíveis.\n\n`' + Object.keys(langs).join('` `') + '`')
         } else {
-        message.channel.sendMessage(':x: | Você não deu argumentos corretos. Tente usar k!traduzir lista Ex: k!traduzir pt I am the best!') }
+        message.channel.sendMessage('<:err:449743511391305748> **|** Você usou o comando de forma errada, tente usar assim: k!traduzir pt I am the best!') }
     } else {
         if(Object.keys(langs).some(a => args[0] === a)) {
             translate(args.slice(1).join(' '), {to: args[0]}).then(res => {
-                const embed = new Discord.RichEmbed()
-                
-            
-                .setColor(`GOLD`)
-                .setAuthor(`Google Translator API`, `https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png`)
-                .setDescription("Tradução de `" + args.slice(1).join(' ') + "` para `" + args[0] + "` é: \n **" + res.text + "**")
-               .setTimestamp()
-.setFooter('Ainda prefiro bing translator | www.bing.com/translator', client.user.avatarURL)
-                    
-                     
-                
-                    message.channel.send({embed: embed})
-            }).catch(err => {
-    message.channel.sendMessage(`:x: | Ocorreu um erro na tradução.`)
+message.channel.sendMessage(':mag_right: | A tradução de `' + args.slice(1).join(' ') + '` para `' + args[0] + '` é:\n\n' + `"` + res.text + `"`)
+}).catch(err => {
+ message.channel.send('<:err:449743511391305748> **|** Ocorreu um erro na tradução')
 });
         
         } else {
-            message.channel.sendMessage(` :x: | O idioma digitado não existe`)
+            message.channel.sendMessage('<:err:449743511391305748> **|** O idioma digitado não existe. Veja todos os idiomas disponíveis usando `k!traduzir lista`')
         }
     }
 }
