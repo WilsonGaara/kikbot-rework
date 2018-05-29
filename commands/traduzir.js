@@ -110,7 +110,7 @@ var langs = {
     'zu': 'Zulu'
 };
 
-exports.run = (bot, client, message, args) => {
+exports.run = (client, message, args) => {
     if(args.length <= 1) {
         if(args[0] === 'lista') {
             message.channel.sendMessage(':mag_right: **|** Esta é a lista de idiomas disponíveis.\n\n`' + Object.keys(langs).join('` `') + '`')
