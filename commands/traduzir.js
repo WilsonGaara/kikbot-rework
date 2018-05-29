@@ -122,7 +122,7 @@ exports.run = (bot, message, args) => {
 //message.channel.sendMessage(':mag_right: | A tradução de `' + args.slice(1).join(' ') + '` para `' + args[0] + '` é:\n\n' + `"` + res.text + `"`)
 var embed = new Discord.RichEmbed()
 .setAuthor('Google Tradutor', 'https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png')
-.setDescription('__\n:white_check_mark: **|** A tradução de: `' + args.slice(1).join(' ') + '` para `' + args[0] + '` é:\n**'+rest.text+'**')
+.setDescription('\n:white_check_mark: **|** A tradução de: `' + args.slice(1).join(' ') + '` para `' + args[0] + '` é:\n**'+res.text+'**')
 .setTimestamp()
 .setFooter('Utilitários', client.user.avatarURL)
 message.channel.send({embed : embed})
