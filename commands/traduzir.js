@@ -76,6 +76,7 @@ var langs = {
     'fa': 'Persian',
     'pl': 'Polish',
     'pt': 'Portuguese',
+    'br': 'Portuguese (Brazil)',
     'ma': 'Punjabi',
     'ro': 'Romanian',
     'ru': 'Russian',
@@ -118,7 +119,13 @@ exports.run = (bot, message, args) => {
     } else {
         if(Object.keys(langs).some(a => args[0] === a)) {
             translate(args.slice(1).join(' '), {to: args[0]}).then(res => {
-message.channel.sendMessage(':mag_right: | A tradução de `' + args.slice(1).join(' ') + '` para `' + args[0] + '` é:\n\n' + `"` + res.text + `"`)
+//message.channel.sendMessage(':mag_right: | A tradução de `' + args.slice(1).join(' ') + '` para `' + args[0] + '` é:\n\n' + `"` + res.text + `"`)
+var embed = new Discord.RichEmbed()
+.setAuthor('Google Tradutor', 'https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png')
+.setDescription('__\n:white_check_mark: **|** A tradução de: `' + args.slice(1).join(' ') + '` para `' + args[0] + '` é:\n**'+rest.text+'**')
+.setTimestamp()
+.setFooter('Utilitários', client.user.avatarURL)
+message.channel.send({embed : embed})
 }).catch(err => {
  message.channel.send('<:err:449743511391305748> **|** Ocorreu um erro na tradução')
 });
