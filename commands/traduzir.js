@@ -110,7 +110,7 @@ var langs = {
     'zu': 'Zulu'
 };
 
-exports.run = (bot, message, args) => {
+exports.run = (bot, client, message, args) => {
     if(args.length <= 1) {
         if(args[0] === 'lista') {
             message.channel.sendMessage(':mag_right: **|** Esta é a lista de idiomas disponíveis.\n\n`' + Object.keys(langs).join('` `') + '`')
@@ -122,7 +122,7 @@ exports.run = (bot, message, args) => {
 //message.channel.sendMessage(':mag_right: | A tradução de `' + args.slice(1).join(' ') + '` para `' + args[0] + '` é:\n\n' + `"` + res.text + `"`)
 var embed = new Discord.RichEmbed()
 .setAuthor('Google Tradutor', 'https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png')
-.setDescription('\n:white_check_mark: **|** A tradução de: `' + args.slice(1).join(' ') + '` para `' + args[0] + '` é:\n**'+res.text+'**')
+.setDescription(':white_check_mark: **|** A tradução de: `' + args.slice(1).join(' ') + '` para `' + args[0] + '` é:\n**"'+res.text+'"**')
 .setTimestamp()
 .setFooter('Utilitários', client.user.avatarURL)
 message.channel.send({embed : embed})
