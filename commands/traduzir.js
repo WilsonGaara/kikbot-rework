@@ -127,7 +127,7 @@ var embed = new Discord.RichEmbed()
 .setFooter('Utilitários', client.user.avatarURL)
 message.channel.send({embed : embed})
 }).catch(err => {
- message.channel.send('<:err:449743511391305748> **|** Ocorreu um erro na tradução')
+ message.channel.send('<:err:449743511391305748> **|** Ocorreu um erro na tradução ```'+err+'```')
 });
         
         } else {
