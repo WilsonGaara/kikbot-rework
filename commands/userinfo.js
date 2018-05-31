@@ -7,10 +7,10 @@ exports.run = (client, message, args, game)  => {
     userstatus = message.mentions.users.first().presence.status;
     usertag = message.mentions.users.first().tag;
     usercolorole = message.guild.member(message.mentions.users.first()).displayHexColor;
-    usercriado = message.mentions.users.first().createdAt;
+    usercriado = message.mentions.users.first().createdTimestamp
     userid = message.mentions.users.first().id;
   game2 = message.mentions.users.first().presence.game
-  userentrou = message.guild.member(message.mentions.users.first().id).joinedAt;
+  userentrou = message.guild.member(message.mentions.users.first().id).joinedTimestamp
   usercargo = message.guild.member(message.mentions.users.first().id).roles.size;
   userbot = message.mentions.users.first().bot;
   
@@ -20,16 +20,16 @@ exports.run = (client, message, args, game)  => {
       userstatus = message.author.presence.status;
     usertag = message.author.tag;
     usercolorole = message.author.highestRole.displayHexColor;
-    usercriado = message.author.createdAt;
+    usercriado = message.author.createdTimestamp
     userid = message.author.id;
     game2 = message.author.presence.game
-    userentrou = message.guild.member(message.author.id).joinedAt;
+    userentrou = message.guild.member(message.author.id).joinedTimestamp
     usercargo = message.guild.member(message.author.id).roles.size;
     userapelido = message.guild.member(message.author.id).nickname
     userbot = message.author.bot;
     }
 var embed = new Discord.RichEmbed()
-.setAuthor('Informações de:'+usertag, userfoto)
+.setAuthor('Informações de: '+user, userfoto)
 .setDescription(usercriado)
 .setColor(usercolorole)
 .setTimestamp()
