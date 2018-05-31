@@ -29,6 +29,18 @@ exports.run = (client, message, args, game)  => {
     userapelido = message.guild.member(message.author.id).nickname
     userbot = message.author.bot;
     }
+    function stats() {
+      var status = userstatus
+      if  (status == "online") {
+      return "Disponível"
+    } else if (status == "offline") {
+      return ("Indisponível")
+      } else if  (status == "dnd") {
+      return ("Ocupado")
+      } else if (status == "idle") {
+      return ("Ausente")
+      }
+    }
     const cargus = usercargo.map(u => u.name).join("\n")
     function playing(){
       var playings = game2
@@ -43,10 +55,12 @@ exports.run = (client, message, args, game)  => {
 var embed = new Discord.RichEmbed()
 .setAuthor('Informações de: '+user, userfoto)
 .setThumbnail(userfoto)
+.addField(`:satellite_orbital: Status:`, `${stats()}`,true)
 .addField(":date: Criou a conta em", moment(usercriado).format('lll'), true)
 .addField(":date: Entrou aqui em", moment(userentrou).format('lll'), true)
 .addField(`:desktop: Jogando:`, `**${playing()}**`, true)
 .addField(`:computer: ID:`, userid, true)
+.addField(`:computer: Tag no Discord:`, usertag, true)
 .addField(`:briefcase: Cargos`, cargus, true)
 .setColor(usercolorole)
 .setTimestamp()
