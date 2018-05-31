@@ -12,7 +12,7 @@ exports.run = (client, message, args, game)  => {
     userid = message.mentions.users.first().id;
   game2 = message.mentions.users.first().presence.game;
   userentrou = message.guild.member(message.mentions.users.first().id).joinedAt;
-  usercargo = message.guild.member(message.mentions.users.first().id).roles.size;
+  usercargo = message.guild.member(message.mentions.users.first().id).roles;
   userbot = message.mentions.users.first().bot;
   
     } else {
@@ -25,11 +25,11 @@ exports.run = (client, message, args, game)  => {
     userid = message.author.id;
     game2 = message.author.presence.game;
     userentrou = message.guild.member(message.author.id).joinedAt;
-    usercargo = message.guild.member(message.author.id).roles.size;
+    usercargo = message.guild.member(message.author.id).roles;
     userapelido = message.guild.member(message.author.id).nickname
     userbot = message.author.bot;
     }
-    const cargus = usercargo.map(g => g.name).join("\n")
+    const cargus = usercargo.map(u => u.name).join("\n")
     function playing(){
       var playings = game2
       if(playings != undefined){
