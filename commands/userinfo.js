@@ -33,4 +33,5 @@ var embed = new Discord.RichEmbed()
 .setColor(usercolorole)
 .setTimestamp()
 .setFooter('kikbot-', client.user.avatarURL)
+message.channel.send({embed : embed})
   };
