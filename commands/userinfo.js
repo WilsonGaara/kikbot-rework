@@ -42,6 +42,7 @@ exports.run = (client, message, args, game)  => {
        moment.locale('pt-BR');
 var embed = new Discord.RichEmbed()
 .setAuthor('Informações de: '+user, userfoto)
+.setThumbnail(userfoto)
 .addField(":date: Criou a conta em", moment(usercriado).format('lll'), true)
 .addField(":date: Entrou aqui em", moment(userentrou).format('lll'), true)
 .addField(`:desktop: Jogando:`, `**${playing()}**`, true)
