@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const cargus = usercargo.map(g => g.name).join("\n")
 exports.run = (client, message, args, game)  => {
     if (message.mentions.users.first()) {
         userapelido = message.guild.member(message.mentions.users.first()).nickname
@@ -33,17 +34,18 @@ exports.run = (client, message, args, game)  => {
       if(playings != undefined){
           return playings.name;
       }else{
-          return "**Não detectado**";
+          return "Não detectado";
       }
   }
     const moment = require('moment');
        moment.locale('pt-BR');
 var embed = new Discord.RichEmbed()
 .setAuthor('Informações de: '+user, userfoto)
-.addField(":date: Criou a conta em", moment(usercriado).format('LLLL'), true)
-.addField(":date: Entrou aqui em", moment(userentrou).format('LLLL'), true)
+.addField(":date: Criou a conta em", moment(usercriado).format('lll'), true)
+.addField(":date: Entrou aqui em", moment(userentrou).format('lll'), true)
 .addField(`:desktop: Jogando:`, `**${playing()}**`, true)
 .addField(`:computer: ID:`, userid, true)
+.addField(`:briefcase: Cargos`, cargus, true)
 .setColor(usercolorole)
 .setTimestamp()
 .setFooter('kikbot-', client.user.avatarURL)
