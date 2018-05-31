@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const cargus = usercargo.map(g => g.name).join("\n")
+
 exports.run = (client, message, args, game)  => {
     if (message.mentions.users.first()) {
         userapelido = message.guild.member(message.mentions.users.first()).nickname
@@ -20,7 +20,7 @@ exports.run = (client, message, args, game)  => {
       userfoto = message.author.displayAvatarURL;
       userstatus = message.author.presence.status;
     usertag = message.author.tag;
-    usercolorole = message.author.highestRole.displayHexColor;
+    usercolorole = message.guild.member(message.author.id).highestRole.displayHexColor;
     usercriado = message.author.createdAt;
     userid = message.author.id;
     game2 = message.author.presence.game;
@@ -29,6 +29,7 @@ exports.run = (client, message, args, game)  => {
     userapelido = message.guild.member(message.author.id).nickname
     userbot = message.author.bot;
     }
+    const cargus = usercargo.map(g => g.name).join("\n")
     function playing(){
       var playings = game2
       if(playings != undefined){
