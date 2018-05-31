@@ -41,7 +41,7 @@ exports.run = (client, message, args, game)  => {
       return ("Ausente")
       }
     }
-    const cargus = usercargo.map(u => u.name).join("\n")
+    const cargus = usercargo.map(u => u.name).join(", ")
     function playing(){
       var playings = game2
       if(playings != undefined){
