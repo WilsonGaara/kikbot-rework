@@ -7,10 +7,10 @@ exports.run = (client, message, args, game)  => {
     userstatus = message.mentions.users.first().presence.status;
     usertag = message.mentions.users.first().tag;
     usercolorole = message.guild.member(message.mentions.users.first()).displayHexColor;
-    usercriado = message.mentions.users.first().createdTimestamp();
+    usercriado = message.mentions.users.first().createdAt;
     userid = message.mentions.users.first().id;
   game2 = message.mentions.users.first().presence.game;
-  userentrou = message.guild.member(message.mentions.users.first().id).joinedTimestamp();
+  userentrou = message.guild.member(message.mentions.users.first().id).joinedAt;
   usercargo = message.guild.member(message.mentions.users.first().id).roles.size;
   userbot = message.mentions.users.first().bot;
   
@@ -20,17 +20,30 @@ exports.run = (client, message, args, game)  => {
       userstatus = message.author.presence.status;
     usertag = message.author.tag;
     usercolorole = message.author.highestRole.displayHexColor;
-    usercriado = message.author.createdTimestamp;
+    usercriado = message.author.createdAt;
     userid = message.author.id;
     game2 = message.author.presence.game;
-    userentrou = message.guild.member(message.author.id).joinedTimestamp();
+    userentrou = message.guild.member(message.author.id).joinedAt;
     usercargo = message.guild.member(message.author.id).roles.size;
     userapelido = message.guild.member(message.author.id).nickname
     userbot = message.author.bot;
     }
+    function playing(){
+      var playings = game2
+      if(playings != undefined){
+          return playings.name;
+      }else{
+          return "**Não detectado**";
+      }
+  }
+    const moment = require('moment');
+       moment.locale('pt-BR');
 var embed = new Discord.RichEmbed()
 .setAuthor('Informações de: '+user, userfoto)
-.setDescription(usercriado)
+.addField(":date: Criou a conta em", moment(usercriado).format('LLLL'), true)
+.addField(":date: Entrou aqui em", moment(userentrou).format('LLLL'), true)
+.addField(`:desktop: Jogando:`, `**${playing()}**`, true)
+.addField(`:computer: ID:`, userid, true)
 .setColor(usercolorole)
 .setTimestamp()
 .setFooter('kikbot-', client.user.avatarURL)
