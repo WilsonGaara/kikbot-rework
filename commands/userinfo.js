@@ -19,7 +19,7 @@ exports.run = (client, message, args, game)  => {
       userfoto = message.author.displayAvatarURL;
       userstatus = message.author.presence.status;
     usertag = message.author.tag;
-    usercolorole = message.guild.member(message.author.id).highestRole.displayHexColor;
+    usercolorole = message.author.highestRole.displayHexColor;
     usercriado = message.author.createdAt;
     userid = message.author.id;
     game2 = message.author.presence.game
