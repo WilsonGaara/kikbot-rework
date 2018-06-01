@@ -80,7 +80,7 @@ let prefixes = JSON.parse(fs.readFileSync("./prefixos.json", "utf8"));
  //Anti-Comando errado
 
  let command = message.content.split(" ")[0];
- command = command.slice(config.prefix.length);
+ command = command.slice(prefix.length);
 
 
   let args = message.content.split(" ").slice(1);
