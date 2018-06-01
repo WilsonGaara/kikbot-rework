@@ -75,7 +75,7 @@ client.on("message", message => {
  //Anti-Comando errado
  
  let command = message.content.split(" ")[0];
- command = command.slice(prefixo.length);
+ command = command.slice(config.prefix.length);
 
 
   let args = message.content.split(" ").slice(1);
