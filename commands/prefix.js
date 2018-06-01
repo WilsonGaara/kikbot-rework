@@ -1,5 +1,6 @@
    exports.run = async(client, message, args) => {
-
+const fs = require('fs')
+const Discord = require('discord.js')
 
         if  (!message.member.hasPermissions(["MANAGE_GUILD"])) return message.reply("Você não tem direito de mudar meu prefix!");
         if(args.join(' ').length < 1) return message.reply('Uso correto: k!prefix <prefixo>')
@@ -23,3 +24,4 @@ if(err) return message.reply(err)
 
 
     }
+
