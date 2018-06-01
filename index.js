@@ -4,13 +4,11 @@ const config = require('./config.json');
 const fs = require('fs');
 
 
-
-   
 client.on('ready', () => {
-console.log(`Liguei! `)
-});
 
+  console.log('Ok, pronto para a batalha!');
 
+})
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
@@ -33,6 +31,7 @@ client.on("message", message => {
 
 
   let args = message.content.split(" ").slice(1);
+  
 
 
 
