@@ -3,7 +3,7 @@
 
         if  (!message.member.hasPermissions(["MANAGE_GUILD"])) return message.reply("Você não tem direito de mudar meu prefix!");
         if(args.join(' ').length < 1) return message.reply('Uso correto: k!prefix <prefixo>')
-        if(args.join(' ').length < 4) return message.reply('O prefix não pode ser muito longo para usuários lembrar!')
+        if(args.join(' ').length > 4) return message.reply('O prefix não pode ser muito longo para usuários lembrar!')
 
         let prefixes = JSON.parse(fs.readFileSync("./prefixos.json", "utf8"));
         prefixes[message.guild.id] = {
