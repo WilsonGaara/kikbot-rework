@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const config = require('./config.json')
 const fs = require('fs');
 
 
@@ -67,20 +68,20 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
 });
 
 client.on("message", message => {
-  let prefixes = JSON.parse(fs.readFileSync("./prefixos.json", "utf8"));
+  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if(!prefixes[message.guild.id]){
       prefixes[message.guild.id] = {
-          prefixes: "k!"
+          prefixes: config.prefix
       };
   }
-  let prefix = prefixes[message.guild.id].prefixes;
+  let prefixo = prefixes[message.guild.id].prefixes;
   if(!message.guild) return;
   if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
+  if (!message.content.startsWith(config.prefix)) return;
  //Anti-Comando errado
  
  let command = message.content.split(" ")[0];
- command = command.slice(prefix.length);
+ command = command.slice(prefixo.length);
 
 
   let args = message.content.split(" ").slice(1);
