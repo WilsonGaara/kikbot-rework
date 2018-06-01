@@ -68,13 +68,7 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
 });
 
 client.on("message", message => {
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  if(!prefixes[message.guild.id]){
-      prefixes[message.guild.id] = {
-          prefixes: config.prefix
-      };
-  }
-  let prefixo = prefixes[message.guild.id].prefixes;
+ 
   if(!message.guild) return;
   if (message.author.bot) return;
   if (!message.content.startsWith(config.prefix)) return;
