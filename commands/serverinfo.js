@@ -92,10 +92,7 @@ exports.run = (client, message, args)  => {
      string  += `${message.guild.roles.array()[i].name}` + `, `;
   
   }
-        var Jimp = require("jimp");
-        Jimp.read(message.guild.iconURL).then(function (image) {
-    var file = "novo.png";
-    image.write(file)
+        
     const Discord = require('discord.js')
 
                 var embed2 = new Discord.RichEmbed()
@@ -108,14 +105,14 @@ exports.run = (client, message, args)  => {
              .addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
              .addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
              .setColor('BLUE')
-             .setThumbnail("./novo.png")
+             .setThumbnail(message.guild.iconURL.slice(85) + 'png')
              .setTimestamp()
              .setFooter(message.guild)
                    message.channel.send({embed: embed2});
                    
                    
     
-                })};
+};
 
                 
             
