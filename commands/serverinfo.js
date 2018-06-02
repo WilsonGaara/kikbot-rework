@@ -93,8 +93,8 @@ exports.run = (client, message, args)  => {
   
   }
         var Jimp = require("jimp");
-Jimp.read(`${message.guild.iconURL}`).then(function (image) {
-image.getBuffer(Jimp.MIME_PNG, (err, buffer) => {
+        let img    = Jimp.read(message.guild.iconURL)
+img.getBuffer(Jimp.MIME_PNG, (err, buffer) => {
 
     const Discord = require('discord.js')
 
@@ -115,7 +115,7 @@ image.getBuffer(Jimp.MIME_PNG, (err, buffer) => {
                    message.reply(err)
                    message.channel.sendFile(buffer)
     
-                })});
+                });
 };
                 
             
