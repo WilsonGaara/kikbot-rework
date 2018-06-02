@@ -109,7 +109,7 @@ exports.run = (client, message, args)  => {
              .setTimestamp()
              .setFooter(message.guild)
                    message.channel.send({embed: embed2});
-                   message.reply(message.guild.iconURL + ` ${message.guild.icon}`)
+                   message.reply(message.guild.iconURL)
                    
                    
     
