@@ -87,15 +87,8 @@ exports.run = (client, message, args)  => {
           return "Não detectado";
       }
   }
-  let string = ''
-  for(var i = 0;i < message.guild.roles.size;i++){
-     string  += `${message.guild.roles.array()[i].name}` + `, `;
-  
-  }
-        
+
     const Discord = require('discord.js')
-let fala = `${message.guild.iconURL}`
-var convert = fala.replace('jpg', 'png');
 
                 var embed2 = new Discord.RichEmbed()
              .setAuthor(message.guild)
@@ -107,16 +100,16 @@ var convert = fala.replace('jpg', 'png');
              .addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
              .addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
              .setColor('BLUE')
-             .setThumbnail(convert)
+             .setThumbnail(message.guild.iconURL)
              .setTimestamp()
              .setFooter(message.guild)
                    message.channel.send({embed: embed2});
 
-                   
-                   
-    
-};
-
+let fala = `${message.guild.iconURL}`
+var convert = fala.replace('jpg', 'png');
+               
+  message.channel.send(convert)
+} 
                 
             
   
