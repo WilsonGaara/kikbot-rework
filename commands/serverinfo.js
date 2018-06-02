@@ -94,7 +94,8 @@ exports.run = (client, message, args)  => {
   }
         
     const Discord = require('discord.js')
-
+let fala = `${message.guild.iconURL}`;
+message.reply(fala.slice(85, 88))
                 var embed2 = new Discord.RichEmbed()
              .setAuthor(message.guild)
              .addField('💻 ID' , message.guild.id, true)
@@ -109,7 +110,7 @@ exports.run = (client, message, args)  => {
              .setTimestamp()
              .setFooter(message.guild)
                    message.channel.send({embed: embed2});
-                   message.reply(message.guild.iconURL)
+                  
                    
                    
     
