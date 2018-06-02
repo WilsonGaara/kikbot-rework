@@ -93,9 +93,7 @@ exports.run = (client, message, args)  => {
   
   }
         var Jimp = require("jimp");
-        let img    = Jimp.read(message.guild.iconURL)
-img.getBuffer(Jimp.MIME_PNG, (err, buffer) => {
-
+   
     const Discord = require('discord.js')
 
                 var embed2 = new Discord.RichEmbed()
@@ -108,14 +106,13 @@ img.getBuffer(Jimp.MIME_PNG, (err, buffer) => {
              .addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
              .addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
              .setColor('BLUE')
-             .setThumbnail(buffer)
+             .setThumbnail(message.guild.iconURL).width(80).height(80)
              .setTimestamp()
              .setFooter(message.guild)
                    message.channel.send({embed: embed2});
-                   message.reply(err)
-                   message.channel.sendFile(buffer)
+                   
     
-                });
+
 };
                 
             
