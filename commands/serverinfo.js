@@ -102,7 +102,7 @@ exports.run = (client, message, args)  => {
                .addField(`💬 Canais(${message.guild.channels.size})`, `:pencil: **Texto:** ${message.guild.channels.filter(channel => channel.type == 'text').size}\n:speaking_head: **Voz:** ${message.guild.channels.filter(channel => channel.type == 'voice').size}`, true)
                .addField(`📅 Criado em`, moment(message.guild.createdAt).format('lll'), true)
                .addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
-               .addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.members.filter(member => member.size)}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
+               .addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.members.size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
 
                .setThumbnail(message.guild.iconURL)
                .setTimestamp()
