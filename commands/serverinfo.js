@@ -95,7 +95,7 @@ exports.run = (client, message, args)  => {
     const Discord = require('discord.js')
     let fala = `${message.guild.iconURL}`
     var convert = fala.replace('jpg', 'png');
-    message.reply(convert)
+
                 var embed2 = new Discord.RichEmbed()
              .setAuthor(message.guild)
              .addField('💻 ID' , message.guild.id, true)
@@ -106,7 +106,7 @@ exports.run = (client, message, args)  => {
              .addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
              .addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
              .setColor('BLUE')
-             .setThumbnail(message.guild.iconURL)
+             .Thumbnail(convert)
              .setTimestamp()
              .setFooter(message.guild)
                    message.channel.send({embed: embed2});
