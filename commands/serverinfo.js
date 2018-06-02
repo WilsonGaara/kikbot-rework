@@ -112,6 +112,7 @@ image.getBuffer(Jimp.MIME_PNG, (err, buffer) => {
              .setTimestamp()
              .setFooter(message.guild)
                    message.channel.send({embed: embed2});
+                   message.reply(err)
     
                 })});
 };
