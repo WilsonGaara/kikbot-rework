@@ -105,10 +105,10 @@ exports.run = (client, message, args)  => {
              .setFooter(message.guild)
                    message.channel.send({embed: embed2});
 
-let fala = `${message.guild.iconURL}`
-var convert = fala.replace('jpg', 'png');
+//let fala = `${message.guild.iconURL}`
+//var convert = fala.replace('jpg', 'png');
                
-  message.channel.send(convert)
+  //message.channel.send(convert)
 } 
                 
             
