@@ -87,9 +87,15 @@ exports.run = (client, message, args)  => {
           return "Não detectado";
       }
   }
-
+  let string = ''
+  for(var i = 0;i < message.guild.roles.size;i++){
+     string  += `${message.guild.roles.array()[i].name}` + `, `;
+  
+  }
     const Discord = require('discord.js')
-
+    let fala = `${message.guild.iconURL}`
+    var convert = fala.replace('jpg', 'png');
+    message.reply(convert)
                 var embed2 = new Discord.RichEmbed()
              .setAuthor(message.guild)
              .addField('💻 ID' , message.guild.id, true)
@@ -104,12 +110,10 @@ exports.run = (client, message, args)  => {
              .setTimestamp()
              .setFooter(message.guild)
                    message.channel.send({embed: embed2});
+    
 
-//let fala = `${message.guild.iconURL}`
-//var convert = fala.replace('jpg', 'png');
-               
-  //message.channel.send(convert)
-} 
+};
+ 
                 
             
   
