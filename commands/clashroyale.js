@@ -1,4 +1,8 @@
 exports.run = (client, message, args)  => {
-  const cr = require('clashroyale');
-cr.getProfile('GG829JGY').then(profile => console.log(profile));
-}
+  const CRoyale = require('croyale');
+const client = new CRoyale.Client(process.env.CR);
+ 
+client.getPlayer('CVLQ2GV8', { keys: ['name'] })
+    .then(player => {
+        console.log(`The player's name is ${player.name}`);
+    });
