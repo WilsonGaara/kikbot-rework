@@ -98,7 +98,7 @@ exports.run = (client, message, args)  => {
 
                 var embed2 = new Discord.RichEmbed()
              .setAuthor(message.guild)
-                .setDescription(`[Convert](convert)`)
+             
              .addField('💻 ID' , message.guild.id, true)
              .addField('👑 Dono', message.guild.owner, true)
              .addField('🌎 Região', regiao(), true)
@@ -111,8 +111,7 @@ exports.run = (client, message, args)  => {
              .setTimestamp()
              .setFooter(message.guild)
                    message.channel.send({embed: embed2});
-        message.reply(message.guild.iconURL)
-    
+       
 
 };
  
