@@ -1,4 +1,4 @@
-exports.run = (client, message, args)  => {
+exports.run = (bot, message, args)  => {
   const CRoyale = require('croyale');
 const client = new CRoyale.Client(process.env.CR);
  
