@@ -7,3 +7,4 @@ client.getPlayer('CVLQ2GV8', { keys: ['name'] })
         console.log(`The player's name is ${player.name}`);
   console.log(player)
     });
+  }
