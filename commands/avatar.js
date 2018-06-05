@@ -8,8 +8,6 @@ exports.run = (client, message, args)  => {
 
     user = message.author.username
     userfoto = message.author.avatarURL;
-user = message.guild.member(message.guild.members.get(args.join(' ').username));
-userfoto = message.guild.member(message.guild.members.get(args.join(' ').displayAvatarURL));
   }
 
         const embed = new Discord.RichEmbed()
