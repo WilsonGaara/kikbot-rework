@@ -2,7 +2,7 @@ exports.run = (client, message, args)  => {
     
 	const Discord = require("discord.js");
 	  if (message.mentions.users.first()) {
-    user1 = message.mentions.users.first().username;
+    user = message.mentions.users.first().username;
     userfoto = message.mentions.users.first().displayAvatarURL;
   } else {
     if (message.mentions.users.first()) {
@@ -10,8 +10,8 @@ exports.run = (client, message, args)  => {
     userfoto = message.author.avatarURL;
     
   } else {
-user = message.guild.members.get(args.join(' ').username);
-userfoto = message.guild.members.get(args.join(' ').displayAvatarURL);
+user = message.guild.member(message.guild.members.get(args.join(' ').username));
+userfoto = message.guild.member(message.guild.members.get(args.join(' ').displayAvatarURL));
   }
 
         const embed = new Discord.RichEmbed()
