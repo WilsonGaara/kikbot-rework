@@ -5,11 +5,9 @@ exports.run = (client, message, args)  => {
     user = message.mentions.users.first().username;
     userfoto = message.mentions.users.first().displayAvatarURL;
   } else {
-    if (message.mentions.users.first()) {
+
     user = message.author.username
     userfoto = message.author.avatarURL;
-    
-  } else {
 user = message.guild.member(message.guild.members.get(args.join(' ').username));
 userfoto = message.guild.member(message.guild.members.get(args.join(' ').displayAvatarURL));
   }
@@ -21,5 +19,4 @@ userfoto = message.guild.member(message.guild.members.get(args.join(' ').display
              .setImage(userfoto);
   
         message.channel.send({embed: embed})
-}
 }
