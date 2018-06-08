@@ -95,26 +95,33 @@ exports.run = (client, message, args)  => {
     const Discord = require('discord.js')
     let fala = `${message.guild.iconURL}`
     var convert = fala.replace('jpg', 'png');
-
+    function grandi(){
+      var botChecking = message.guild.large;
+          if (botChecking == true) {
+              return "Esta guild é grande. (Mais de 250 membros)";
+          } else {
+      if (botChecking == false){
+              return "Esta guild é pequena. (Menos de 250 membros)"
+      }
+          }
+      }
                 var embed2 = new Discord.RichEmbed()
-             .setAuthor(message.guild)
-             
+             .setAuthor(message.guild, convert)
+             .setDescription(grandi())
              .addField('💻 ID' , message.guild.id, true)
              .addField('👑 Dono', message.guild.owner, true)
              .addField('🌎 Região', regiao(), true)
-             .addField(`💬 Canais(${message.guild.channels.size})`, `:pencil: **Texto:** ${message.guild.channels.filter(channel => channel.type == 'text').size}\n:speaking_head: **Voz:** ${message.guild.channels.filter(channel => channel.type == 'voice').size}`, true)
+             .addField(`💬 Canais (${message.guild.channels.size})`, `:pencil: **Texto:** ${message.guild.channels.filter(channel => channel.type == 'text').size}\n:speaking_head: **Voz:** ${message.guild.channels.filter(channel => channel.type == 'voice').size}`, true)
              .addField(`📅 Criado em`, moment(message.guild.createdAt).format('lll'), true)
              .addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
              .addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
              .setColor('BLUE')
              .setThumbnail(convert)
              .setTimestamp()
-             .setFooter(message.guild)
+             .setFooter(message.guild, message.author.displayAvatarURL)
                    message.channel.send({embed: embed2});
        
 
 };
  
                 
-            
-  
