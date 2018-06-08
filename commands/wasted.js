@@ -9,7 +9,7 @@ exports.run = (client, message, args)  => {
   }
     var Jimp = require("jimp")
     let img    = Jimp.read('./mine.png'),// vAI PEGAR A IMAGEM NORMAL
-    avatar = Jimp.read(message.author.avatarURL)
+    avatar = Jimp.read(message.author.displayAvatarURL)
     avatar2 = Jimp.read(message.mentions.users.first().avatarURL)// Pega o avatar do meliante
 Promise.all([img, avatar, avatar2]).then(imgs => {
   let avatar2  = imgs[2]
