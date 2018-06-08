@@ -2,10 +2,10 @@ exports.run = (client, message, args)  => {
 	const Discord = require("discord.js");
 	  if (message.mentions.users.first()) {
     user = message.mentions.users.first().username;
-    userfoto = message.mentions.users.first().avatarURL;
+    userfoto = message.mentions.users.first().displayAvatarURL;
   } else {
     user = message.author.username
-    userfoto = message.author.avatarURL;
+    userfoto = message.author.displayAvatarURL;
   }
     var Jimp = require("jimp")
     let img    = Jimp.read('./teste.png'),
