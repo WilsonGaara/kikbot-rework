@@ -35,7 +35,7 @@ exports.run = (client, message, args)  => {
 		message.react(`🏓`);
 
 	
-	message.reply('📡 **l** `'+Math.round(client.ping)+'ms`' + ' Shard **l** (**1**/1)\n`❔` **l** Este comando te fala sobre minha taxa de ida e volta, em milisegundos, isto é. Meu **ping**.');
+	message.reply('📡 **l** `'+Math.round(client.ping)+'ms`' + '\n`❔` **l** Este comando te fala sobre minha taxa de ida e volta, em milisegundos, isto é. Meu **ping**.');
 	 
 
 
