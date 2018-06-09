@@ -10,6 +10,8 @@
     "google": "^2.1.0",
     "google-translate-api": "^2.3.0",
     "jimp": "^0.2.28",
+    "ytdl-core": "^0.20.4",
+    "yt-search": "^0.1.4",
     "moment": "^2.22.1",
     "steamapi": "^2.0.2",
     "weather-js": "^2.0.0"
