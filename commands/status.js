@@ -1,4 +1,6 @@
 exports.run = (client, message, args)  => {
+const Discord = require('discord.js')
+
 var embed2 = new Discord.RichEmbed()
 .setAuthor('Status | Kikbot', client.user.avatarURL)
 .setDescription('_Este comando fala para o autor meus status atuais(ou não)_')
