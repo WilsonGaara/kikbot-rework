@@ -12,6 +12,7 @@
     "jimp": "^0.2.28",
     "ytdl-core": "^0.20.4",
     "yt-search": "^0.1.4",
+    "opusscript": "^0.0.6",
     "moment": "^2.22.1",
     "steamapi": "^2.0.2",
     "ffmpeg-binaries": "^3.2.2-3",
