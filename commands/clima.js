@@ -58,7 +58,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
 // Aqui vai enviar a msg pra o canal onde o comando foi executado!
 
 const config = {
-    apikey: "kTC0LP5MCeSkcYUBogj7UeeApGcDbK7d",
+    apikey: process.env.CLIMA,
     language: "pt-br"
   };
 
