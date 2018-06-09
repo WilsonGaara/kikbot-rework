@@ -56,6 +56,8 @@ exports.run = (client, message, args)  => {
 	return (":flag_hk: Hong Kong")
   } else if (guildVerification == undefined) {
 	return (":face_palm: **|** Eu não fiz mais functions, desculpe, volte mais tarde")
+} else if (guildVerification == 'undefined') {
+	return (":face_palm: **|** Eu não fiz mais functions, desculpe, volte mais tarde")
   } else if (guildVerification == "eu-west") {
 	return (":flag_eu: Europa Oeste")
   } else if (guildVerification == "us-east") {
@@ -72,10 +74,11 @@ exports.run = (client, message, args)  => {
 	return (":flag_gb: Londres ")
   } else if(guildVerification == "japan") {
 	  return (":flag_jp: Japão")
+  } else if(guildVerification == "eu-central") {
+	  return (":flag_eu: **|** Europa Central (Região na Europa)")
 	
 	}
   }
-  
       
   
   var min = Math.floor(timeout/(1*60))%60;
