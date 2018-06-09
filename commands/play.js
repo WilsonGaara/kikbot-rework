@@ -11,10 +11,11 @@ let musica = "www.youtube.com" + video.url
 
    let voiceChannel = message.member.voiceChannel
   voiceChannel.join()
+   message.reply('🎧 **|** Aguardando tocar: `'+videos[ 0 ].title+'` **'+videos[ 0 ].duration.timestamp+'**')
   .then(connection => {
     const stream = ytdl(musica, { filter : 'audioonly' });
     const dispatcher = connection.playStream(stream)
-    message.reply('🎧 **|** Aguardando tocar: `'+videos[ 0 ].title+'` **'+videos[ 0 ].duration.timestamp+'**')
+   
      .on("end", () => {
        message.channel.send('Música acabou!')
        message.member.voiceChannel.leave();
