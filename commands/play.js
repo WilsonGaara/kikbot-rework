@@ -8,12 +8,16 @@ ytSearch = require('yt-search');
    video = videos[0]
    console.log(video)
    let musica = "www.youtube.com" + video.url
-   var connection = await message.member.voiceChannel
+
    let voiceChannel = message.member.voiceChannel
    voiceChannel.join()
-   .then(conneciton => {
+   .then(connection => {
      const stream = ytdl(musica, { filter : 'audioonly' });
      const dispatcher = connection.playStream(stream)
+     .on("end", () => {
+       message.channel.send('Música acabou!')
+       message.member.voiceChannel.leave();
+     });
      dispatcher.setVolumeLogarithmic(5 / 5);
    });
   });
