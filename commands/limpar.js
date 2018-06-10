@@ -10,7 +10,7 @@ exports.run = (client, message, args)  => {
      if(args.length < 1) return message.channel.send({embed : embed2})
    
    
-     if (args.join(' ') > '100') {
+     if (args.join(' ') > 100) {
       message.channel.send(`Opa, acho que mais de 100 não posso!`)
   } else {
       if(!args[0]) return message.reply(`Coloque algum número depois do comando :x:`)
