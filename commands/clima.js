@@ -80,6 +80,7 @@ const config = {
         //Oops! O AccuWeather não conseguiu encontrar a cidade. Enquanto isso só está as informações de MSN
         
               r.users.filter(u => r.remove(u.id !== client.user.id));
+                      collector.end()
               break;
            
         };
