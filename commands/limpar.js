@@ -17,7 +17,7 @@ exports.run = (client, message, args)  => {
           if  (!message.member.hasPermissions(["MANAGE_MESSAGES"])) return message.reply("**Você não tem a permissão para usar isto!**");
           let messagecount = parseInt
 message.channel.bulkDelete(args[0])
-.catch(error => message.reply(`<:err:455473374421057547> **|** Ocorreu um erro: ${error}`)) 
+.catch(error => message.reply(`<:err:449743511391305748> **|** Ocorreu um erro: ${error}`)) 
 
 
   }
