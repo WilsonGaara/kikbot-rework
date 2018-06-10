@@ -10,21 +10,15 @@ exports.run = (client, message, args)  => {
      if(args.length < 1) return message.channel.send({embed : embed2})
    
    
-            
-             let messagecount = parseInt
-if(args.join(' ') > 101)  return message.channel.send(`<:err:449743511391305748> **|** Oops! Você excedeu o limite de mensagens para serem excluidas, eu acho. Outras causas:\nVocê não colocou um número.\nO número é negativo.\nE uma infinidade de erros.`);
-  var num = Number.isInteger(args.join(` `))
-  if(num !== true)  return message.channel.send(`<:err:449743511391305748> **|** Oops! Você excedeu o limite de mensagens para serem excluidas, eu acho. Outras causas:\nVocê não colocou um número.\nO número é negativo.\nE uma infinidade de erros.`)
-     
- 
-  message.channel.bulkDelete(args[0])
-  setInterval(() => {
+     if (args.join(' ') > '100') {
+      message.channel.send(`Opa, acho que mais de 100 não posso!`)
+  } else {
+      if(!args[0]) return message.reply(`Coloque algum número depois do comando :x:`)
+          if  (!message.member.hasPermissions(["MANAGE_MESSAGES"])) return message.reply("**Você não tem a permissão para usar isto!**");
+          let messagecount = parseInt
+message.channel.bulkDelete(args[0])
+.catch(error => message.reply(`<:err:455473374421057547> **|** Ocorreu um erro: ${error}`)) 
 
 
-
-
-
-    message.channel.send(`:rocket: **|** Foram deletadas **${args.join(' ')}** mensagens.`);
-
-  }, 900);
-};
+  }
+}
