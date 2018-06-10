@@ -14,7 +14,7 @@ const embed = new Discord.RichEmbed()
 message.channel.send({embed: embed})
 
   } else {
- if(args[0].toLowerCase() != 'PEDRA' && args[0].toLowerCase() != 'PAPEL' && args[0].toLowerCase() != 'TESOURA') return message.reply('Você não colocou um argumento válido.')
+ if(args[0].toLowerCase() != 'papel' && args[0].toLowerCase() != 'pedra' && args[0].toLowerCase() != 'tesoura') return message.reply('Você não colocou um argumento válido.')
               var texto = [`Você escolheu :new_moon:, eu escolhi :newspaper: \n :flag_black:  **I Que pena... Você perdeu, mas o que vale é a intenção**`, `Você escolheu :new_moon:, eu escolhi :new_moon: \n :flag_white: **I Empate! ** `, `:tada: **I** Você escolheu :new_moon:, eu escolhi :scissors: \n :small_blue_diamond: **I Parabéns você ganhou! **`];
               const random = texto[Math.floor(Math.random() * texto.length)];
               var texto2 = [`Você escolheu :newspaper:, eu escolhi :scissors: \n :flag_black:  **I Que pena... Você perdeu, mas o que vale é a intenção**`, `Você escolheu :newspaper:, eu escolhi :newspaper: \n :flag_white: **I Empate! ** `, `:tada: **I** Você escolheu :newspaper:, eu escolhi :new_moon: \n :small_blue_diamond: **I Parabéns você ganhou! **`];
