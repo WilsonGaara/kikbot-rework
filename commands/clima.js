@@ -76,11 +76,11 @@ const config = {
               const Discord = require('discord.js');
             accuweatherSimple.getWeather(`${args.join(` `)}`).then(result => newMsg.edit('**Previsão, olhar para o futuro** \n`'+ result+'`'))
             
-            .catch(error => message.channel.send('<:err:449743511391305748> **|** '+message.author+' **O AccuWeather não encontrou a cidade, exibindo apenas informações da MSN Weather. (Isso também pode acontecer pelo limite de pedidos ao AccuWeather que são 50 por dia. Eles fazem isso para pessoas que não pagam não usarem muita banda.**'));
+            .catch(error => newMsg.edit('<:err:449743511391305748> **|** '+message.author+' **O AccuWeather não encontrou a cidade, exibindo apenas informações da MSN Weather. (Isso também pode acontecer pelo limite de pedidos ao AccuWeather que são 50 por dia. Eles fazem isso para pessoas que não pagam não usarem muita banda.**'));
         //Oops! O AccuWeather não conseguiu encontrar a cidade. Enquanto isso só está as informações de MSN
         
               r.users.filter(u => r.remove(u.id !== client.user.id));
-                      collector.end()
+                      
               break;
            
         };
