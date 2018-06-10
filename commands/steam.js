@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 const steam = new SteamAPI(process.env.STEAM);
 const moment = require('moment');
      moment.locale('pt-BR');  
+//VARIAVEIS
 
 exports.run = (client, message, args)  => {
   if(args.join(' ').length < 1) return message.reply('<:err:449743511391305748> **|** Você precisa inserir um id da steam válido, o que vem depois de steamcommunity.com/profiles/**seuid** ele pode até ser o seu personalizado.');
@@ -14,9 +15,9 @@ exports.run = (client, message, args)  => {
 .setColor('BLUE')
 .setFooter(`ID STEAM do usuário: ${summary.steamID} | kikbot-`)
 message.channel.send({embed: embed});
-
+//CODIGO
 		steam.getUserRecentGames(id).then(games => {
-   
+   //BLABLA
      
         const afk = games.map(g => g.name).join("\n")
  
@@ -30,7 +31,7 @@ message.channel.send({embed: embed});
   message.channel.send({embed: embed2});
 
   
-      
+  
 });
     });
   });
