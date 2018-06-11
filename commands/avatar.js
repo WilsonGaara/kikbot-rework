@@ -13,7 +13,7 @@ exports.run = (client, message, args)  => {
         const embed = new Discord.RichEmbed()
              .setColor('AQUA')
              .setTitle(`:frame_photo: ${user}`)
-            .addTimestamp()
+            .setTimestamp()
              .setImage(userfoto)
              .setFooter(user, userfoto)
   
