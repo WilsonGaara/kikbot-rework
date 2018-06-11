@@ -14,8 +14,8 @@ exports.run = (client, message, args)  => {
              .setColor('AQUA')
              .setTitle(`:frame_photo: ${user}`)
             .addTimestamp()
-             .setImage(userfoto);
-             .setFooter(message.author.tag, userfoto)
+             .setImage(userfoto)
+             .setFooter(user, userfoto)
   
         message.channel.send({embed: embed})
 }
