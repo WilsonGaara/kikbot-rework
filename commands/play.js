@@ -13,7 +13,7 @@ let musica = "www.youtube.com" + video.url
   voiceChannel.join()
    
   .then(connection => {
-    const stream = ytdl(musica, { filter : '480p' });
+    const stream = ytdl(musica, { filter : 'audioonly' });
     const dispatcher = connection.playStream(stream)
     .on("end", () => {
      message.channel.send('Música acabou!')
