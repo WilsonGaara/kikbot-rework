@@ -6,8 +6,8 @@ exports.run = (client, message, args)  => {
     userfoto = message.mentions.users.first().displayAvatarURL;
   } else {
 
-    user = message.author.username
-    userfoto = message.author.diplayAvatarURL;
+    user = message.author.username;
+    userfoto = message.author.displayAvatarURL;
   }
 
         const embed = new Discord.RichEmbed()
