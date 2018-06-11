@@ -7,14 +7,15 @@ exports.run = (client, message, args)  => {
   } else {
 
     user = message.author.username
-    userfoto = message.author.avatarURL;
+    userfoto = message.author.diplayAvatarURL;
   }
 
         const embed = new Discord.RichEmbed()
              .setColor('AQUA')
              .setTitle(`:frame_photo: ${user}`)
-             .setDescription(`**Clique [aqui](${userfoto}) para abrir o link do seu avatar, ou o link de download**`)
+            .setTimestamp()
              .setImage(userfoto);
+             .setFooter(message.author.tag, userfoto)
   
         message.channel.send({embed: embed})
 }
