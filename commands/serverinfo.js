@@ -115,6 +115,7 @@ exports.run = (client, message, args)  => {
                 var embed2 = new Discord.RichEmbed()
              .setAuthor(message.guild, convert)
              .setDescription(grandi())
+   .addField('Canal afk test', message.guild.afkChannel', true)
              .addField('💻 ID' , message.guild.id, true)
              .addField('👑 Dono', message.guild.owner, true)
              .addField('🌎 Região', regiao(), true)
