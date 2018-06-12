@@ -6,7 +6,7 @@ exports.run = (client, message, args)  => {
     
     .addField('<:memory:437019126175891466> RAM', (` ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb`), true)
     .addField('🎛 CPU', (process.cpuUsage().user / 1024 / 1024 / 2).toFixed(2) + "%", true)
-    .addField('📚 Outras infos...', `**Usuários:** ${client.users.size}\n**Latência:** ${Math.round(client.ping)}\n**Servidores:** ${client.servers.size}`)
+    .addField('📚 Outras infos...', `**Usuários:** ${client.users.size}\n**Latência:** ${Math.round(client.ping)}\n**Servidores:** ${client.guilds.size}`)
     .setColor('RED')
     .setTimestamp()
     .setFooter(message.author.tag, message.author.displayAvatarURL)
@@ -14,3 +14,4 @@ exports.run = (client, message, args)  => {
     
     
     };
+    
