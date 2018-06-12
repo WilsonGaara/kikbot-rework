@@ -4,7 +4,7 @@ exports.run = (client, message, args)  => {
 var seg = Math.floor(uptime/1000)%60;
 var min = Math.floor(uptime/(1000*60))%60;
 var horas = Math.floor(uptime/(1000*60*60))%24;
-var uptimeconv = horas + ' horas, ' + min + ' minutos e ' + seg + ' segundos.';  
+var uptimeconv = horas + ':' + min + ':' + seg;  
 
     var embed2 = new Discord.RichEmbed()
     .setAuthor('Status | Kikbot', client.user.avatarURL)
@@ -12,7 +12,7 @@ var uptimeconv = horas + ' horas, ' + min + ' minutos e ' + seg + ' segundos.';
     .addField('<:memory:437019126175891466> RAM', (` ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb`), true)
     .addField('🎛 CPU', (process.cpuUsage().user / 1024 / 1024 / 2).toFixed(2) + "%", true)
     .addField('📚 Outras infos...', `**Usuários:** ${client.users.size}\n**Latência:** ${Math.round(client.ping)}ms\n**Servidores:** ${client.guilds.size}`, true)
-    .addField(`🆙⏲ Uptime`, uptimeconv, true)
+    .addField(`🕙 Uptime`, uptimeconv, true)
     .setColor('RED')
     .setTimestamp()
     .setFooter(message.author.tag, message.author.displayAvatarURL)
