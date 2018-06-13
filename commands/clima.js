@@ -36,7 +36,6 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
     const embed = new Discord.RichEmbed()
     .setDescription(`**${current.skytext}**`)
     .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `https://i.imgur.com/uiW0eUg.png`) 
-   .setThumbnail(current.imageUrl)
   //  .setColor(`BLUE`)
     .addField(':clock4: Fuso Horário',`UTC${location.timezone}`, true) 
         .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n${current.temperature}°C Atual\n${forecast.low}°C Minima`, true)
@@ -48,9 +47,9 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
     .addField(':stars: Latitude', `${location.lat}°`, true)
     .addField(':stars: Longitude', `${location.long}°`, true)
 
-    
+    .setTimestamp()
    
-    .setFooter(`Email suporte | kikbot-@outlook.com | Website: kikbot-.glitch.me`, message.author.displayAvatarURL)
+    .setFooter(`Utilidade`, message.author.displayAvatarURL)
    
     message.channel.send({embed});
     if(current.temperature > 27) return message.reply(`:warning: Temperatura elevada!`);
