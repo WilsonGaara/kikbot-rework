@@ -11,11 +11,10 @@ client.on('ready', () => {
 })
 client.on('guildMemberAdd', member => {
   if(member.guild.id !== "425864977996578816") return;
-  // Send the message to a designated channel on a server:
-  var channel = client.channels.get("");
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
+ 
+  var channel = client.channels.get("425865939691765760");
+   if (!channel) return;
+
   var embed = new Discord.RichEmbed()
   .setAuthor(member.user.tag, member.user.displayAvatarURL)
   .setColor('GREEN')
@@ -26,11 +25,11 @@ client.on('guildMemberAdd', member => {
 });
 client.on('guildMemberDelete', member => {
   if(member.guild.id !== "425864977996578816") return;
-  // Send the message to a designated channel on a server:
+  
   var channel2 = client.channels.get("425865939691765760");
-  // Do nothing if the channel wasn't found on this server
-  if (!channel2) return;
-  // Send the message, mentioning the member
+  
+  if (!channel2) return console.log('Eita preula, ERRO')
+ 
   var embed2 = new Discord.RichEmbed()
   .setAuthor(member.user.tag, member.user.displayAvatarURL)
   .setColor('RED')
@@ -39,6 +38,7 @@ client.on('guildMemberDelete', member => {
   .setFooter(`ID do usuário: ${member.user.id} `, member.guild.iconURL)
   channel2.send({embed : embed2})
 });
+
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
