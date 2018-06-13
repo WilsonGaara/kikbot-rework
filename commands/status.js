@@ -8,7 +8,7 @@ var uptimeconv = `(${horas}) Hora(s) e (${min}) minutos.`
 
 	var embed = new Discord.RichEmbed()
   .setAuthor('Status | Kikbot', client.user.avatarURL)
-  .setDescription('Mostrando informações sobre Fragmento(shard) ['+`${client.shard[1].id + 1}`+'] | Use as reactions para alternar de uma informação à outra')
+  .setDescription('Mostrando informações sobre Fragmento(shard) ['+`${client.shard.id + 1}`+'] ')
 	 .setThumbnail(client.user.avatarURL)
 	.addField('<:memory:437019126175891466> RAM', (` ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb`), true)
 	.addField('🎛 CPU', (process.cpuUsage().user / 1024 / 1024 / 10).toFixed(2) + "%", true)
