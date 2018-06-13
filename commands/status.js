@@ -20,7 +20,7 @@ var uptimeconv = `(${horas}) Hora(s) e (${min}) minutos.`
           newMsg.react('⬅');
           newMsg.react('➡');
           const collector = newMsg.createReactionCollector((r, u) => (r.emoji.name === '⬅' || r.emoji.name === '➡') && u.id !== client.user.id);
-          var uptime2 = `${client.shard[1].uptime}`;
+          var uptime2 = `${client.shards[1].uptime}`;
           var seg = Math.floor(uptime2/1000)%60;
           var min = Math.floor(uptime2/(1000*60))%60;
           var horas = Math.floor(uptime2/(1000*60*60))%24;
@@ -49,7 +49,7 @@ var uptimeconv = `(${horas}) Hora(s) e (${min}) minutos.`
                   .setThumbnail(client.user.avatarURL)
                  .addField('<:memory:437019126175891466> RAM', (` ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb`), true)
                  .addField('🎛 CPU', (process.cpuUsage().user / 1024 / 1024 / 10).toFixed(2) + "%", true)
-                 .addField('📚 Outras infos...', `**Usuários:** ${client.shard[1].users.size}\n**Latência:** ${Math.round(client.shard[1].ping)}ms\n**Servidores:** ${client.shard[1].guilds.size}\n**Shard:** **${client.shard.id + 1}**/2`, true)
+                 .addField('📚 Outras infos...', `**Usuários:** ${client.shards[1].users.size}\n**Latência:** ${Math.round(client.shards[1].ping)}ms\n**Servidores:** ${client.shards[1].guilds.size}\n**Shard:** **${client.shards[1].id + 1}**/2`, true)
                  .addField(`🕙 Uptime`, uptimeconv2, true)
                  .setColor('BLUE')
                  .setTimestamp()
