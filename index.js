@@ -17,7 +17,7 @@ client.on('guildMemberAdd', member => {
     if (!channel) return;
   var Discord200 = require('discord.js')
   var embed = new Discord200.RichEmbed()
-  .setAuthor(member.tag, member.displayAvatarURL)
+  .setAuthor(member.user.tag, member.user.displayAvatarURL)
 .setDescription(`🙋 **|** Bem-vindo(a) ao servidor!`)
   .setColor('GREEN')
   .setTimestamp()
@@ -33,7 +33,7 @@ client.on('guildMemberDelete', member => {
     if (!channel) return;
   var Discord2020 = require('discord.js')
   var embed2 = new Discord2020.RichEmbed()
-  .setAuthor(member.tag, member.displayAvatarURL)
+  .setAuthor(member.user.tag, member.user.displayAvatarURL)
 .setDescription(`😕 **|** Tchau, espero que nada de mal lhe-aconteça...`)
   .setColor('RED')
   .setTimestamp()
