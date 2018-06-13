@@ -12,7 +12,7 @@ client.on('ready', () => {
 client.on('guildMemberAdd', member => {
 
 
-    let channel = member.guild.channels.find('name', 'testar-bot-javascript💻 ')
+   var channel = client.channels.get("425865939691765760");
    
     if (!channel) return;
   var Discord200 = require('discord.js')
@@ -22,14 +22,12 @@ client.on('guildMemberAdd', member => {
   .setColor('GREEN')
   .setTimestamp()
   .setFooter(`ID do usuário: ${member.user.id}`, member.user.displayAvatarURL)
-    channel.send({embed : embed})
+channel.send({embed : embed})
   })
 
 client.on('guildMemberDelete', member => {
 
-
-    let channel2 = member.guild.channels.find('name', 'testar-bot-javascript💻 ')
-   
+var channel2 = client.channels.get("425865939691765760");
     if (!channel2) return;
   
   var embed2 = new Discord200.RichEmbed()
