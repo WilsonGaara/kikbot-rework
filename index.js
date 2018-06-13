@@ -24,19 +24,18 @@ client.on('guildMemberAdd', member => {
   channel.send({embed : embed})
 });
 client.on('guildMemberDelete', member => {
-  if(member.guild.id !== "425864977996578816") return;
-  
-  var channel2 = client.channels.get("425865939691765760");
-  
-  if (!channel2) return console.log('Eita preula, ERRO')
+   if(member.guild.id !== "425864977996578816") return;
  
+  var channel = client.channels.get("425865939691765760");
+   if (!channel) return;
+
   var embed2 = new Discord.RichEmbed()
   .setAuthor(member.user.tag, member.user.displayAvatarURL)
   .setColor('RED')
   .setDescription('**Tchau! Tomara que nada de ruim esteja a acontecer :confused:**')
   .setTimestamp()
   .setFooter(`ID do usuário: ${member.user.id} `, member.guild.iconURL)
-  channel2.send({embed : embed2})
+  channel.send(embed2)
 });
 
 
