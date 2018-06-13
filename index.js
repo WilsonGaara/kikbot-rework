@@ -23,7 +23,7 @@ client.on('guildMemberAdd', member => {
   .setFooter(`ID do usuário: ${member.user.id} `, member.guild.iconURL)
   channel.send({embed : embed})
 });
-client.on('guildMemberDelete', member => {
+client.on('guildMemberRemove', member => {
    if(member.guild.id !== "425864977996578816") return;
  
   var channel = client.channels.get("425865939691765760");
