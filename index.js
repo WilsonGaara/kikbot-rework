@@ -21,24 +21,24 @@ client.on('guildMemberAdd', member => {
 .setDescription(`🙋 **|** Bem-vindo(a) ao servidor!`)
   .setColor('GREEN')
   .setTimestamp()
-  .setFooter(`ID do usuário: ${member.id}`, member.guild.iconURL)
+  .setFooter(`ID do usuário: ${member.user.id}`, member.user.displayAvatarURL)
     channel.send({embed : embed})
   })
 
 client.on('guildMemberDelete', member => {
 
 
-    let channel = member.guild.channels.find('name', 'testar-bot-javascript💻 ')
+    let channel2 = member.guild.channels.find('name', 'testar-bot-javascript💻 ')
    
-    if (!channel) return;
-  var Discord2020 = require('discord.js')
-  var embed2 = new Discord2020.RichEmbed()
+    if (!channel2) return;
+  
+  var embed2 = new Discord200.RichEmbed()
   .setAuthor(member.user.tag, member.user.displayAvatarURL)
 .setDescription(`😕 **|** Tchau, espero que nada de mal lhe-aconteça...`)
   .setColor('RED')
   .setTimestamp()
-  .setFooter(`ID do usuário: ${member.id}`, member.guild.iconURL)
-    channel.send({embed : embed2})
+  .setFooter(`ID do usuário: ${member.user.id}`, member.user.displayAvatarURL)
+    channel2.send({embed : embed2})
   })
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
