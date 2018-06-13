@@ -10,34 +10,34 @@ client.on('ready', () => {
 
 })
 client.on('guildMemberAdd', member => {
-
-
-   var channel = client.channels.get("425865939691765760");
-   
-    if (!channel) return;
-  var Discord200 = require('discord.js')
-  var embed = new Discord200.RichEmbed()
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find('id', '425865939691765760');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  var embed = new Discord.RichEmbed()
   .setAuthor(member.user.tag, member.user.displayAvatarURL)
-.setDescription(`🙋 **|** Bem-vindo(a) ao servidor!`)
   .setColor('GREEN')
+  .setDescription('**Bem-vindo(a) ao servidor!**')
   .setTimestamp()
-  .setFooter(`ID do usuário: ${member.user.id}`, member.user.displayAvatarURL)
-channel.send({embed : embed})
-  })
-
+  .setFooter(`ID do usuário: ${member.user.id} `, member.guild.iconURL)
+  channel.send({embed : embed})
+});
 client.on('guildMemberDelete', member => {
-
-var channel2 = client.channels.get("425865939691765760");
-    if (!channel2) return;
-  
-  var embed2 = new Discord200.RichEmbed()
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find('id', '425865939691765760');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  var embed = new Discord.RichEmbed()
   .setAuthor(member.user.tag, member.user.displayAvatarURL)
-.setDescription(`😕 **|** Tchau, espero que nada de mal lhe-aconteça...`)
   .setColor('RED')
+  .setDescription('**Tchau! Tomara que nada de ruim esteja a acontecer :confused:**')
   .setTimestamp()
-  .setFooter(`ID do usuário: ${member.user.id}`, member.user.displayAvatarURL)
-    channel2.send({embed : embed2})
-  })
+  .setFooter(`ID do usuário: ${member.user.id} `, member.guild.iconURL)
+  channel.send({embed : embed})
+});
+
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
