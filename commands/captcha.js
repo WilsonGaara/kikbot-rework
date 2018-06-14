@@ -12,7 +12,12 @@ if(message.member.roles.has(CaptchaRole.id)) {
 message.author.send(`Cargo removido :frowning:`)
 
 } else {
-  message.channel.send(':white_check_mark: **|** Ok, agora o captcha é: **'+random+'**\nDigite e espere 22 segundos para eu verificar!')
+  message.channel.send(':white_check_mark: **|** Ok, agora o captcha é: **'+random+'**\nDigite e espere 22 segundos para eu verificar!').then(message4 => {
+    setInterval(() => {
+      message4.delete()
+    },4000);
+  })
+  
 .then(() => {
   message.channel.awaitMessages(response => response.author.id === message.author.id, {
     max: 1,
