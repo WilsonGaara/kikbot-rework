@@ -15,7 +15,7 @@ message.author.send(`Cargo removido :frowning:`)
   message.channel.send(':white_check_mark: **|** Ok, agora o captcha é: **'+random+'**\nDigite e espere 22 segundos para eu verificar!').then(message4 => {
     setInterval(() => {
       message4.delete()
-    },4000);
+    },22000);
   })
   
 .then(() => {
