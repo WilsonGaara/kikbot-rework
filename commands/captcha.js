@@ -20,15 +20,16 @@ message.author.send(`Cargo removido :frowning:`)
     errors: ['time'],
   })
 .then((collected) => {
-  collected = collected.toLocaleLowerCase();
-     if(collected == random) {
-      message.guild.member(message.author.id).addRole(CaptchaRole.id).catch(console.error);
-      message.author.send(`Cargo adcionado em: ${message.guild}`)
-    message.channel.send(':white_check_mark: **|** Mano do céu, conseguiu brother.')
-     }
-     if(collected != random)  return message.channel.send('<:err:449743511391305748> **|** Você não acertou o captcha, tente novamente.')
-     
-    })
+  collected = collected.first().content.toLocaleLowerCase();
+  if(collected !== random) { return message.channel.send('<:err:449743511391305748> **|** Você não acertou o captcha, tente novamente.')
+    
+     } else { 
+      if(collected == random) {
+        message.guild.member(message.author.id).addRole(CaptchaRole.id).catch(console.error);
+        message.author.send(`Cargo adcionado em: ${message.guild}`)
+      message.channel.send(':white_check_mark: **|** Mano do céu, conseguiu brother.')
+    }}})
+    
 .catch(() => {
       message.channel.send('<:err:449743511391305748> **|** Você não digitou nada depois de 22 segundos... Decepção');
     });
