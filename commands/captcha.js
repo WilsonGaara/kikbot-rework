@@ -1,9 +1,9 @@
 exports.run = async (client, message, args)  => {
   message.delete()
-  var texto = ['ay.w@zz', 'zwyzw', 'kciwzw', 'upnow', 'randomized', 'kikbot', 'Z.395r_w', 'pt-br.w', 'nobotsdiscord', 'modbotkikbot'];
+  var texto = ['ay.w@zz', 'zwyzw', 'kciwzw', 'upnow', 'randomized', 'kikbot', 'z.395r_w', 'pt-br.w', 'nobotsdiscord', 'modbotkikbot'];
     const random = texto[Math.floor(Math.random() * texto.length)];
-	let CaptchaRole = message.guild.roles.find("name", `Membros`);
-  if(!CaptchaRole) { return message.reply(":x: Não vi nenhum cargo com o nome de `Membros`");
+	let CaptchaRole = message.guild.roles.find("name", `Verificados`);
+  if(!CaptchaRole) { return message.reply(":x: Não vi nenhum cargo com o nome de `Verificados`");
   
 } else {
 };
