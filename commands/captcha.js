@@ -1,6 +1,6 @@
 exports.run = async (client, message, args)  => {
   message.delete()
-  var texto = ['a.y_w@zz', 'Z wYzW', 'k.ciwzZ', 'upNow', 'randomized', 'kikbot'];
+  var texto = ['ay.w@zz', 'zwyzw', 'kciwzw', 'upnow', 'randomized', 'kikbot', 'Z 395r_W'];
     const random = texto[Math.floor(Math.random() * texto.length)];
 	let CaptchaRole = message.guild.roles.find("name", `Membros`);
   if(!CaptchaRole) { return message.reply(":x: Não vi nenhum cargo com o nome de `Membros`");
@@ -20,9 +20,8 @@ message.author.send(`Cargo removido :frowning:`)
     errors: ['time'],
   })
 .then((collected) => {
-  collected = collected.first().content.toLocaleLowerCase();
+  collected = collected.first().content.toLowerCase();
   if(collected !== random) { return message.channel.send('<:err:449743511391305748> **|** Você não acertou o captcha, tente novamente.')
-    
      } else { 
       if(collected == random) {
         message.guild.member(message.author.id).addRole(CaptchaRole.id).catch(console.error);
