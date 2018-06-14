@@ -11,7 +11,7 @@ var uptimeconv = `(${horas}) Hora(s) e (${min}) minutos.`
   .setDescription('Mostrando informações sobre Fragmento(shard) ['+`${client.shard.id + 1}`+'] ')
 	 .setThumbnail(client.user.avatarURL)
 	.addField('<:memory:437019126175891466> RAM', (` ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}mb`), true)
-	.addField('🎛 CPU', (process.cpuUsage().user / 1024 / 1024 / 10).toFixed(2) + "%", true)
+	.addField('🎛 CPU', (process.cpuUsage().user / 1024 / 1024 / 1024).toFixed(2) + "%", true)
 	.addField('📚 Outras infos...', `**Usuários:** ${client.users.size}\n**Latência:** ${Math.round(client.ping)}ms\n**Servidores:** ${client.guilds.size}\n**Shard:** **${client.shard.id + 1}**/2`, true)
 	.addField(`🕙 Uptime`, uptimeconv, true)
 	.setColor('BLUE')
