@@ -1,4 +1,4 @@
-exports.run = (client, message, args)  => {
+exports.run = async (client, message, args)  => {
   message.delete()
   var texto = ['a.y_w@zz', 'Z wYzW', 'k.ciwzZ', 'upNow', 'randomized', 'kikbot'];
     const random = texto[Math.floor(Math.random() * texto.length)];
@@ -18,7 +18,8 @@ if(check.toLowerCase() == random) {
 		 message.guild.member(message.author.id).addRole(CaptchaRole.id).catch(console.error);
      message.author.send(`Cargo adcionado em: ${message.guild}`)
    message.channel.send(':white_check_mark: **|** Mano do céu, conseguiu brother.')
-}
+} else {
 if(check.toLowerCase() !== random) return message.channel.send('<:err:449743511391305748> **|** Você não acertou o captcha, tente novamente.')
     };
   };
+};
