@@ -9,7 +9,7 @@ exports.run = async (client, message, args)  => {
 };
 if(message.member.roles.has(CaptchaRole.id)) {
   message.guild.member(message.author.id).removeRole(CaptchaRole.id)
-message.author.send(`Cargo removido :frowning:`)
+message.author.send(`:frowning: **|** Opa, você já esteve com o cargo. Caso seja sua escolha, eu removi-o para você.`)
 
 } else {
   message.channel.send(':white_check_mark: **|** Ok, agora o captcha é: **'+random+'**\nDigite, você tem 30 segundos até eu verificar!').then(message4 => {
@@ -47,10 +47,10 @@ message.delete()
     }}})
     
 .catch(() => {
-      message.channel.send('<:err:449743511391305748> **|** Você não digitou nada depois de 22 segundos... Decepção').then(message2 => {
+      message.channel.send('<:err:449743511391305748> **|** Você não digitou nada depois de 30 segundos... Decepção').then(message2 => {
         setInterval(() => {
           message2.delete()
-        },4000);
+        },7000);
       })})
 });
 };
