@@ -1,5 +1,5 @@
 ﻿exports.run = async(client, message, args) => {
 
-    client.user.setPresence({ game: { name: `k!help | kikbot-.glitch.me • (Shard: ${client.shard.id + 1}/2)`, type:  2} });
+    client.user.setPresence({ game: { name: `k!help | kikbot-.glitch.me • Um bot para o Discord, brasileiro...`, type:  2} });
 
     }
