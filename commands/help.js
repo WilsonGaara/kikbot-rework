@@ -1,6 +1,6 @@
 exports.run = (client, message, args)  => {
 	let Discord = require('discord.js')
-	var texto = ['RED', 'GOLD', 'BLUE'];
+	var texto = ['RED', 'GOLD', 'BLUE', 'GREEN'];
 	const random = texto[Math.floor(Math.random() * texto.length)];
 	const embed = new Discord.RichEmbed()
 .setAuthor('Ajuda | Kikbot-', client.user.avatarURL)
