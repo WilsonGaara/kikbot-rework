@@ -139,8 +139,7 @@ exports.run = (client, message, args)  => {
 	}
 	  const Discord = require('discord.js')
 	
-	  let fala2 = client.guilds.get(args[0]).iconURL
-	  var convert2 = fala2.replace('jpg', 'png');
+	 ;
 	  function grandi(){
 		var botChecking = message.guild.large;
 			if (botChecking == true) {
@@ -181,7 +180,8 @@ exports.run = (client, message, args)  => {
 				.setFooter(message.guild, message.author.displayAvatarURL)
 				    return message.channel.send({embed: embed2});
 			   } else {
-		
+				let fala2 = client.guilds.get(args[0]).iconURL
+				var convert2 = fala2.replace('jpg', 'png')
 			var embed1 = new Discord.RichEmbed()
 			.setAuthor(client.guilds.get(args[0]).name, convert2)
 			.setDescription(grandi2())
