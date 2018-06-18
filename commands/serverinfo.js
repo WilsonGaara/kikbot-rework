@@ -161,11 +161,11 @@ exports.run = (client, message, args)  => {
 			}
 				}
 			}
-					let fala = `${message.guild.iconURL}`
-				var convert = fala.replace('jpg', 'png');
-			
+			let fala1 = `${message.guild.iconURL}`
+			var convert1 = fala1.replace('jpg', 'png');
+		
 				var embed2 = new Discord.RichEmbed()
-				.setAuthor(message.guild, convert)
+				.setAuthor(message.guild, convert1)
 				.setDescription(grandi())
 				.addField('💻 ID' , message.guild.id, true)
 				.addField('👑 Dono', message.guild.owner, true)
@@ -175,7 +175,7 @@ exports.run = (client, message, args)  => {
 				.addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
 				.addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
 				.setColor('BLUE')
-				.setThumbnail(convert)
+				.setThumbnail(convert1)
 				.setTimestamp()
 				.setFooter(message.guild, message.author.displayAvatarURL)
 			   if(!client.guilds.get(args[0])) { return message.channel.send({embed: embed2});
