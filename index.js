@@ -67,9 +67,9 @@ client.on("message", message => {
   try {
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
-    var texto = ['1', '2', '3', '4', '5', '6', '7', '8']
+    var texto = ['1', '2', '3', '4', '5', '6', '7', '8', '111', '20', '30']
  const random = texto[Math.floor(Math.random() * texto.length)];
-if(random == '3') return message.channel.send('<:kikbotcuted:458296375793418240> **|** Vejo que está gostando de meus comandos, se ainda não divulgou o **kikbot** para seus amigos. Peço que por favor, me divulgue, isso ajuda bastante.');
+if(random == '3') return message.channel.send('<:kikbotcuted:458296375793418240> **|** Vejo que está gostando de meus comandos, se ainda não divulgou o **kikbot** para seus amigos. Peço que por favor, me divulgue, isso ajuda bastante.\n[Clique aqui para me adcionar em algum servidor.](https://discordapp.com/api/oauth2/authorize?client_id=431271825763467264&permissions=36826310&scope=bot)');
   } catch (err) {
     console.error(err);
   }
