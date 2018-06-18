@@ -24,6 +24,12 @@ var emb = new Discord.RichEmbed()
 .setFooter(message.author.tag, message.author.displayAvatarURL)
 	message.channel.send(emb)
 } catch (err) {
+	const clean = text => {
+		if (typeof(text) === "string")
+			return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+		else
+				return text;
+	}
 	const Discord2 = require('discord.js')
 	var embed = new Discord2.RichEmbed()
 	.setAuthor(message.author.username, message.author.displayAvatarURL)
