@@ -4,7 +4,7 @@ exports.run = (client, message, args)  => {
 var seg = Math.floor(uptime/1000)%60;
 var min = Math.floor(uptime/(1000*60))%60;
 var horas = Math.floor(uptime/(1000*60*60))%24;
-var uptimeconv = `${horas}h, ${min}m e ${seg}s.`
+var uptimeconv = `**${horas}**h, **${min}**m e **${seg}**s.`
 
 	var embed = new Discord.RichEmbed()
   .setAuthor('Status | Kikbot', client.user.avatarURL)
