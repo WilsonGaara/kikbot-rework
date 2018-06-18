@@ -138,10 +138,8 @@ exports.run = (client, message, args)  => {
 	
 	}
 	  const Discord = require('discord.js')
-	  let fala = `${message.guild.iconURL}`
-	  var convert = fala.replace('jpg', 'png');
-
-	  let fala2 = `${client.guilds.get(args[0]).iconURL}`
+	
+	  let fala2 = client.guilds.get(args[0]).iconURL
 	  var convert2 = fala2.replace('jpg', 'png');
 	  function grandi(){
 		var botChecking = message.guild.large;
@@ -163,9 +161,9 @@ exports.run = (client, message, args)  => {
 			}
 				}
 			}
-					
+					let fala = `${message.guild.iconURL}`
+				var convert = fala.replace('jpg', 'png');
 			
-			   if(!client.guilds.get(args[0])) {
 				var embed2 = new Discord.RichEmbed()
 				.setAuthor(message.guild, convert)
 				.setDescription(grandi())
@@ -180,11 +178,9 @@ exports.run = (client, message, args)  => {
 				.setThumbnail(convert)
 				.setTimestamp()
 				.setFooter(message.guild, message.author.displayAvatarURL)
-				    return message.channel.send({embed: embed2});
-			   } else {
 		
 			var embed1 = new Discord.RichEmbed()
-			.setAuthor(client.guilds.get(args[0]), convert2)
+			.setAuthor(client.guilds.get(args[0]).name, convert2)
 			.setDescription(grandi2())
 			.addField('💻 ID' , client.guilds.get(args[0]).id, true)
 			.addField('👑 Dono', client.guilds.get(args[0]).owner, true)
@@ -196,9 +192,13 @@ exports.run = (client, message, args)  => {
 			.setColor('BLUE')
 			.setThumbnail(convert2)
 			.setTimestamp()
-			.setFooter(client.guilds.get(args[0]), message.author.displayAvatarURL)
+			.setFooter(message.author, message.author.displayAvatarURL)
 				  
 			message.channel.send({embed : embed1})
+			if(!client.guilds.get(args[0])) { 
+			message.channel.send(embed2)
+			
+ 
 		 }
 		}
   
