@@ -82,38 +82,38 @@ exports.run = (client, message, args)  => {
 	  }
 	}
 	function regiao2() {
-		var guildVerification = client.guilds.get(args[0]).region
-		if  (guildVerification == "en-us") {
+		var guildVerification2 = client.guilds.get(args[0]).region
+		if  (guildVerification2 == "en-us") {
 		return ":flag_us: Estados Unidos"
-	  } else if (guildVerification == `brazil`) {
+	  } else if (guildVerification2 == `brazil`) {
 		return (":flag_br: Brasil")
-			} else if  (guildVerification == "russia") {
+			} else if  (guildVerification2 == "russia") {
 		return (":flag_ru: Rússia")
-		} else if (guildVerification == "singapore") {
+		} else if (guildVerification2 == "singapore") {
 		return (":flag_sg: Singapura")
-			} else if (guildVerification == "hongkong") {
+			} else if (guildVerification2 == "hongkong") {
 		return (":flag_hk: Hong Kong")
-	  } else if (guildVerification == undefined) {
+	  } else if (guildVerification2 == undefined) {
 		return (":face_palm: **|** Eu não fiz mais functions, desculpe, volte mais tarde")
-	} else if (guildVerification == 'undefined') {
+	} else if (guildVerification2 == 'undefined') {
 		return (":face_palm: **|** Eu não fiz mais functions, desculpe, volte mais tarde")
-	  } else if (guildVerification == "eu-west") {
+	  } else if (guildVerification2 == "eu-west") {
 		return (":flag_eu: Europa Oeste")
-	  } else if (guildVerification == "us-east") {
+	  } else if (guildVerification2 == "us-east") {
 		return (":flag_us: Costa Leste dos Estados Unidos")
-	  } else if (guildVerification == "sydney") {
+	  } else if (guildVerification2 == "sydney") {
 		return (":flag_au: Sydney (Dentro da austrália)")
-	  } else if (guildVerification == "us-central") {
+	  } else if (guildVerification2 == "us-central") {
 		return (":flag_us: Estados Unidos Central")
-	  } else if (guildVerification == "us-south") {
+	  } else if (guildVerification2 == "us-south") {
 		return (":flag_us: Região Sul dos Estados Unidos")
-	  } else if (guildVerification == "us-west") {
+	  } else if (guildVerification2 == "us-west") {
 		return (":flag_us: Região Oeste dos Estados Unidos")
-	  } else if (guildVerification == "london") {
+	  } else if (guildVerification2 == "london") {
 		return (":flag_gb: Londres ")
-	  } else if(guildVerification == "japan") {
+	  } else if(guildVerification2 == "japan") {
 		  return (":flag_jp: Japão")
-	  } else if(guildVerification == "eu-central") {
+	  } else if(guildVerification2 == "eu-central") {
 		  return (":flag_eu: **|** Europa Central (Região na Europa)")
 		
 		}
@@ -140,6 +140,8 @@ exports.run = (client, message, args)  => {
 	  const Discord = require('discord.js')
 	  let fala = `${message.guild.iconURL}`
 	  var convert = fala.replace('jpg', 'png');
+	  let fala2 = `${client.guilds.get(args[0]).iconURL}`
+	  var convert2 = fala2.replace('jpg', 'png');
 	  function grandi(){
 		var botChecking = message.guild.large;
 			if (botChecking == true) {
@@ -150,6 +152,17 @@ exports.run = (client, message, args)  => {
 		}
 			}
 		}
+		function grandi2(){
+			var botChecking2 = client.guilds.get(args[0]).large;
+				if (botChecking2 == true) {
+					return "Esta guild é grande. (Mais de 250 membros)";
+				} else {
+			if (botChecking2 == false){
+					return "Esta guild é pequena. (Menos de 250 membros)"
+			}
+				}
+			}
+					
 				  var embed2 = new Discord.RichEmbed()
 			   .setAuthor(message.guild, convert)
 			   .setDescription(grandi())
@@ -164,12 +177,13 @@ exports.run = (client, message, args)  => {
 			   .setThumbnail(convert)
 			   .setTimestamp()
 			   .setFooter(message.guild, message.author.displayAvatarURL)
-					 message.channel.send({embed: embed2});
-			
-		 if(args[0].length == 18) {
+			   if(!client.guilds.get(args[0])) {
+				    return message.channel.send({embed: embed2});
+			   } else {
+		
 			var embed1 = new Discord.RichEmbed()
-			.setAuthor(message.guild, convert)
-			.setDescription(grandi())
+			.setAuthor(client.guilds.get(args[0]), convert2)
+			.setDescription(grandi2())
 			.addField('💻 ID' , client.guilds.get(args[0]).id, true)
 			.addField('👑 Dono', client.guilds.get(args[0]).owner, true)
 			.addField('🌎 Região', regiao2(), true)
@@ -178,10 +192,11 @@ exports.run = (client, message, args)  => {
 			.addField(`🌟 Entrei aqui em`,moment(client.guilds.get(args[0]).joinedAt).format(`lll`), true)
 			.addField(`👥 Membros (${client.guilds.get(args[0]).memberCount})`, `🙋 **Pessoas:** ${client.guilds.get(args[0]).memberCount - client.guilds.get(args[0]).members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${client.guilds.get(args[0]).members.filter(member => member.user.bot).size}`, true)
 			.setColor('BLUE')
-			.setThumbnail(convert)
+			.setThumbnail(convert2)
 			.setTimestamp()
-			.setFooter(message.guild, message.author.displayAvatarURL)
+			.setFooter(client.guilds.get(args[0]), message.author.displayAvatarURL)
 				  
-			 return message.channel.send({embed : embed1})
+			message.channel.send({embed : embed1})
 		 }
-  };
+		}
+  
