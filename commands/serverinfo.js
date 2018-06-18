@@ -140,6 +140,7 @@ exports.run = (client, message, args)  => {
 	  const Discord = require('discord.js')
 	  let fala = `${message.guild.iconURL}`
 	  var convert = fala.replace('jpg', 'png');
+
 	  let fala2 = `${client.guilds.get(args[0]).iconURL}`
 	  var convert2 = fala2.replace('jpg', 'png');
 	  function grandi(){
@@ -163,21 +164,22 @@ exports.run = (client, message, args)  => {
 				}
 			}
 					
-				  var embed2 = new Discord.RichEmbed()
-			   .setAuthor(message.guild, convert)
-			   .setDescription(grandi())
-			   .addField('💻 ID' , message.guild.id, true)
-			   .addField('👑 Dono', message.guild.owner, true)
-			   .addField('🌎 Região', regiao(), true)
-			   .addField(`💬 Canais (${message.guild.channels.size})`, `:pencil: **Texto:** ${message.guild.channels.filter(channel => channel.type == 'text').size}\n:speaking_head: **Voz:** ${message.guild.channels.filter(channel => channel.type == 'voice').size}`, true)
-			   .addField(`📅 Criado em`, moment(message.guild.createdAt).format('lll'), true)
-			   .addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
-			   .addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
-			   .setColor('BLUE')
-			   .setThumbnail(convert)
-			   .setTimestamp()
-			   .setFooter(message.guild, message.author.displayAvatarURL)
+			
 			   if(!client.guilds.get(args[0])) {
+				var embed2 = new Discord.RichEmbed()
+				.setAuthor(message.guild, convert)
+				.setDescription(grandi())
+				.addField('💻 ID' , message.guild.id, true)
+				.addField('👑 Dono', message.guild.owner, true)
+				.addField('🌎 Região', regiao(), true)
+				.addField(`💬 Canais (${message.guild.channels.size})`, `:pencil: **Texto:** ${message.guild.channels.filter(channel => channel.type == 'text').size}\n:speaking_head: **Voz:** ${message.guild.channels.filter(channel => channel.type == 'voice').size}`, true)
+				.addField(`📅 Criado em`, moment(message.guild.createdAt).format('lll'), true)
+				.addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
+				.addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
+				.setColor('BLUE')
+				.setThumbnail(convert)
+				.setTimestamp()
+				.setFooter(message.guild, message.author.displayAvatarURL)
 				    return message.channel.send({embed: embed2});
 			   } else {
 		
