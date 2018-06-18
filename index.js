@@ -67,7 +67,7 @@ client.on("message", message => {
   try {
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
-    var texto = ['1', '2', '3', '4', '5', '6', '7', '8', '123', '11']
+    var texto = ['1', '2', '3', '4', '5', '6', '7', '8', '123', '11', '23', '203']
  const random = texto[Math.floor(Math.random() * texto.length)];
  const Discord2 = require('discord.js');
 var embed1 = new Discord2.RichEmbed()
@@ -76,7 +76,7 @@ var embed1 = new Discord2.RichEmbed()
 .setTimestamp()
 .setColor('BLUE')
 .setFooter(message.author.tag, client.user.avatarURL)
-if(random == '3') return message.channel.send({embed : embed1})
+if(random == '2') return message.channel.send({embed : embed1})
   } catch (err) {
     console.error(err);
   }
