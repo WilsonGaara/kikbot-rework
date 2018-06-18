@@ -29,7 +29,7 @@ message.author.send({embed : embedc})
 const embedd = new Discord.RichEmbed()
 .setTitle('⌨ Discord')
 .setThumbnail('https://images-ext-1.discordapp.net/external/nuERQnVPqEaQA4PQgD-UfjbQy45tWroVXfMdpv5ZusI/https/lh3.googleusercontent.com/_4zBNFjA8S9yjNB_ONwqBvxTvyXYdC7Nh1jYZ2x6YEcldBr2fyijdjM2J5EoVdTpnkA%3Dw300?width=80&height=80')
-.setDescription('_Comandos relacionados ao Discord_\n\nk!userinfo **|** Mostra informações suas ou de outro usuário, caso mencione alguém\nk!serverinfo **|** Mostra informações no servidor local.\nk!avatar **|** Mostra seu avatar no Discord ou de outra pessoa de quem podes mencionar.\nk!emoji `<emoji>` **|** Muda o emoji usado para outro formato. Exemplo `🎨`\nk!serverinfo **|** Mostra informações sobre o servidor atual.\nk!status **|** Mostra minhas informações, sharding, users, guilds e uptime.')
+.setDescription('_Comandos relacionados ao Discord_\n\nk!userinfo **|** Mostra informações suas ou de outro usuário, caso mencione alguém\nk!serverinfo **|** Mostra informações no servidor local.\nk!avatar **|** Mostra seu avatar no Discord ou de outra pessoa de quem podes mencionar.\nk!emoji `<emoji>` **|** Muda o emoji usado para outro formato. Exemplo `🎨`\nk!serverinfo **|** Mostra informações sobre o servidor atual.\nk!info **|** Mostra minhas informações, sharding, users, guilds e uptime.')
 .setColor(random)
 message.author.send({embed : embedd})
 const embede = new Discord.RichEmbed()
@@ -38,9 +38,5 @@ const embede = new Discord.RichEmbed()
 .setDescription('_Comandos para ajudar no dia a dia :sunglasses: _\n\nk!clima `<cidade>` **|** Mostra as condições climáticas de um lugar na Terra.\nk!steam `<url.steam.perfil>` **|** Mostra informações pelo URL de perfil ou Id64 Steam de um usuário Steam.\nk!traduzir `<lingua>` `<texto>` **|** Traduza um texto usando a Google Tradutor API.')
 .setColor(random)
 message.author.send({embed : embede})
-const embedz = new Discord.RichEmbed()
-.setColor('GOLD')
-.setDescription('Comando | `'+message.guild+'`')
-message.channel.send({embed : embedz});
-};
+}
 
