@@ -195,7 +195,7 @@ exports.run = (client, message, args)  => {
 			.setColor('BLUE')
 			.setThumbnail(convert2)
 			.setTimestamp()
-			.setFooter(message.author, message.author.displayAvatarURL)
+			.setFooter(client.guilds.get(args[0]).name, message.author.displayAvatarURL)
 				  
 			message.channel.send({embed : embed1})
 		 }
