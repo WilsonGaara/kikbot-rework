@@ -2,12 +2,13 @@ exports.run = (client, message, args) => {
 
 if(message.author.id !== "395005096527790083") return;
 try {
-	const Discord = require('discord.js')
+
 	const code = args.join(" ");
 	let evaled = eval(code);
 
 	if (typeof evaled !== "string")
 		evaled = require("util").inspect(evaled);
+		const Discord = require('discord.js')
 var emb = new Discord.RichEmbed()
 .setAuthor(message.author.username, message.author.displayAvatarURL)
 .addField('Input', '```'+args.join(" ")+'```')
@@ -17,7 +18,8 @@ var emb = new Discord.RichEmbed()
 .setFooter(message.author.tag, message.author.displayAvatarURL)
 	message.channel.send(emb)
 } catch (err) {
-	var embed = new Discord.RichEmbed()
+	const Discord2 = require('discord.js')
+	var embed = new Discord2.RichEmbed()
 	.setAuthor(message.author.username, message.author.displayAvatarURL)
 	.addField('Erro', '```'+clean(err)+'```')
 	.setColor('RED')
