@@ -66,8 +66,7 @@ const config = {
 
   message.channel.send('**QUER SABER MAIS?**\nReaja => :white_check_mark:').then(newMsg => {
       newMsg.react('✅');
-      const collector = newMsg.createReactionCollector((r, u) => (r.emoji.name === '✅') && u.id !== client.user.id);
-    
+     const collector = newMsg.createReactionCollector((r, u) => (r.emoji.name === '✅') && u.id !== message.author.id);
  
       collector.on('collect', r => {
           switch(r.emoji.name) {
