@@ -53,6 +53,7 @@ client.on("message", message => {
   if(!message.guild) return;
   if (message.author.bot) return;
   if (!message.content.startsWith(config.prefix)) return;
+  
  //Anti-Comando errado
 
  let command = message.content.split(" ")[0];
@@ -62,8 +63,9 @@ client.on("message", message => {
   let args = message.content.split(" ").slice(1);
   
 
-
-
+if(args.includes("<@431271825763467264>")) {
+message.channel.send(`👋 **|** Menção? Oh, certo digite **k!help** para saber mais sobre mim.`)
+}
   try {
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
