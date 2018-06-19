@@ -1,7 +1,7 @@
 exports.run = (client, message, args)  => {
 
  
-    k!eval if(!message.guild.member(client.user.id).hasPermission('EMBED_LINKS')) { return message.reply('<:err:449743511391305748> **|** Eu preciso que me seja fornecida a permissão de EMBED_LINKS, ou enviar links.') 
+   if(!message.guild.member(client.user.id).hasPermission('EMBED_LINKS')) { return message.reply('<:err:449743511391305748> **|** Eu preciso que me seja fornecida a permissão de EMBED_LINKS, ou enviar links.') 
 } else {
 
          
