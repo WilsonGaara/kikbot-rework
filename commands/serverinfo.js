@@ -1,4 +1,8 @@
-exports.run = (message, args)  => { 
+
+		exports.run = (message, args) => { 
+
+
+		
 			const Discord = require('discord.js')
 			const client = new Discord.Client({fetchAllMembers: true});
 							
