@@ -49,13 +49,13 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
 });
 
 client.on("message", message => {
-
+  if(args[0] == "<@431271825763467264>") {
+return message.channel.send(`👋 **|** Menção? Oh, certo digite **k!help** para saber mais sobre mim.`)
+}
   if(!message.guild) return;
   if (message.author.bot) return;
   if (!message.content.startsWith(config.prefix)) return;
-  if(message.content == "<@431271825763467264>") {
-return message.channel.send(`👋 **|** Menção? Oh, certo digite **k!help** para saber mais sobre mim.`)
-}
+
  //Anti-Comando
 
  let command = message.content.split(" ")[0];
