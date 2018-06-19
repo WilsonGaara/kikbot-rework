@@ -1,10 +1,9 @@
 
-		exports.run = (message, args) => { 
+		exports.run = (bot, message, args) => { 
 
 
 		
-			const Discord = require('discord.js')
-			const client = new Discord.Client({fetchAllMembers: true});
+			
 							
 			
 				 
@@ -89,6 +88,7 @@ return (":flag_eu: **|** Europa Central (Região na Europa)")
 
 }
 }
+const client = new Discord.Client({fetchAllMembers: true});
 function regiao2() {
 var guildVerification2 = client.guilds.get(args[0]).region
 if  (guildVerification2 == "en-us") {
@@ -166,7 +166,8 @@ function grandi2(){
  }
 	 }
  }
- const Discord2 = require('discord.js')
+			
+ const Discord = require('discord.js')
 								let fala = `${message.guild.iconURL}`
 							var convert = fala.replace('jpg', 'png');
 						
@@ -187,6 +188,7 @@ function grandi2(){
 							.setFooter(message.guild, message.author.displayAvatarURL)
 									return message.channel.send({embed: embed2});
 							 } else {
+
 							let fala2 = client.guilds.get(args[0]).iconURL
 							var convert2 = fala2.replace('jpg', 'png')
 						var embed1 = new Discord2.RichEmbed()
