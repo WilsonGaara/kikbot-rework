@@ -163,7 +163,7 @@ exports.run = (client, message, args)  => {
 					let fala = `${message.guild.iconURL}`
 				var convert = fala.replace('jpg', 'png');
 			
-			   if(!client.guilds.get(args[0])) { message.channel.send("Certifique-se que estou no servidor que você colocou, caso não colocou nenhum, está as informações do atual...")
+			   if(!client.guilds.get(args[0])) {
 				var embed2 = new Discord.RichEmbed()
 				.setAuthor(message.guild, convert)
 				.setDescription(grandi())
