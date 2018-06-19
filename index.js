@@ -56,7 +56,7 @@ client.on("message", message => {
   if(message.content == "<@431271825763467264>") {
 return message.channel.send(`👋 **|** Menção? Oh, certo digite **k!help** para saber mais sobre mim.`)
 }
- //Anti-Comando errado
+ //Anti-Comando
 
  let command = message.content.split(" ")[0];
  command = command.slice(config.prefix.length);
