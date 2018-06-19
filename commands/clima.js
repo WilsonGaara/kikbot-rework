@@ -1,11 +1,10 @@
 exports.run = (client, message, args)  => {
       
-  
-    if(!(message.guild.member(client.user).hasPermission("EMBED_LINKS"))) {
-        message.channel.send(":no_entry_sign: **l** Oops! \n Pelo jeito não tenho a permissão (`EMBED_LINKS`) \n \n Como arrumar \n \n :cop: Fale com um administrador para me dar esta permissão!")
-    
-      
-      } else {
+  if(!message.guild.member(client.user.id).hasPermission("EMBED_LINKS")) { 
+    return message.channel.send(`${message.author} <:err:49743511391305748> **|** Oops, desculpe. Você precisa me fornecer a permissão: `+'`[EMBED_LINKS]`')
+} else {
+ 
+
       
     var weather = require('weather-js');
 weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) { 
