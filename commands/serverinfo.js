@@ -88,6 +88,7 @@ return (":flag_eu: **|** Europa Central (Região na Europa)")
 
 }
 }
+ const Discord = require('discord.js')
 const client = new Discord.Client({fetchAllMembers: true});
 function regiao2() {
 var guildVerification2 = client.guilds.get(args[0]).region
@@ -167,7 +168,7 @@ function grandi2(){
 	 }
  }
 			
- const Discord = require('discord.js')
+
 								let fala = `${message.guild.iconURL}`
 							var convert = fala.replace('jpg', 'png');
 						
