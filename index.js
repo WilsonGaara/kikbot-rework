@@ -53,7 +53,7 @@ client.on("message", message => {
   if(!message.guild) return;
   if (message.author.bot) return;
   if (!message.content.startsWith(config.prefix)) return;
-  if(message.content.split(" ").slice(1) == "<@431271825763467264>") {
+  if(message.content == "<@431271825763467264>") {
 return message.channel.send(`👋 **|** Menção? Oh, certo digite **k!help** para saber mais sobre mim.`)
 }
  //Anti-Comando errado
