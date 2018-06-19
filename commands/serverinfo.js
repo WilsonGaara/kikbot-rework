@@ -168,7 +168,7 @@ function grandi2(){
  }
 	 }
  }
-			const client = new Discord.Client({fetchAllMembers: true});
+			
 
 								let fala = `${message.guild.iconURL}`
 							var convert = fala.replace('jpg', 'png');
