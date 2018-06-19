@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = const client = new Discord.Client({fetchAllMembers: true});
 const config = require('./config.json');
 const fs = require('fs');
 
@@ -49,9 +49,7 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
 });
 
 client.on("message", message => {
-  if(args[0] == "<@431271825763467264>") {
-return message.channel.send(`👋 **|** Menção? Oh, certo digite **k!help** para saber mais sobre mim.`)
-}
+  
   if(!message.guild) return;
   if (message.author.bot) return;
   if (!message.content.startsWith(config.prefix)) return;
