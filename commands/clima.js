@@ -1,8 +1,8 @@
 exports.run = (client, message, args)  => {
       
   
-    if(!(message.guild.member(client.user).hasPermission("SEND_LINKS"))) {
-        message.channel.send(":no_entry_sign: **l** Oops! \n Pelo jeito não tenho a permissão (`SEND_LINKS`) \n \n Como arrumar \n \n :cop: Fale com um administrador para me dar esta permissão!")
+    if(!(message.guild.member(client.user).hasPermission("EMBED_LINKS"))) {
+        message.channel.send(":no_entry_sign: **l** Oops! \n Pelo jeito não tenho a permissão (`EMBED_LINKS`) \n \n Como arrumar \n \n :cop: Fale com um administrador para me dar esta permissão!")
     
       
       } else {
