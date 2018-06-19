@@ -175,7 +175,7 @@ function grandi2(){
 						
 							 if(!client.guilds.get(args[0])) {
 							var embed2 = new Discord.RichEmbed()
-							.setAuthor(message.guild, convert)
+							.setTitle(message.guild)
 							.setDescription(grandi())
 							.addField('💻 ID' , message.guild.id, true)
 							.addField('👑 Dono', message.guild.owner, true)
