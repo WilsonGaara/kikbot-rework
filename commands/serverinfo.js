@@ -5,44 +5,9 @@ const client = new Discord.Client({fetchAllMembers: true});
     
 	const moment = require('moment');
 		   moment.locale('pt-BR');  
-		   var timeout = `${message.guild.afkTimeout}`;
-	  function verificationLevel() {
-		var guildVerification = message.guild.verificationLevel
-		if  (guildVerification == "0") {
-		return "Nenhum"
-	  } else if (guildVerification == "1") {
-		return ("Baixo")
-		  
+
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  } else if  (guildVerification == "2") {
-		return ("Médio")
-		} else if (guildVerification == "3") {
-		return ("Alto")
-			} else if (guildVerification == "4") {
-		return ("Extremo")
-		}
-	  }
-	  
-	  function tipo() {
-		var guildVerification = message.channel.type
-	  if (guildVerification == "text") {
-		return (":notepad_spiral: l Texto")
-			} else if  (guildVerification == "voice") {
-		return (":microphone: l Voz")
 	
-		}
-	  }
   
 	 function regiao() {
 	  var guildVerification = message.guild.region
