@@ -32,7 +32,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
     const embed = new Discord.RichEmbed()
     .setDescription(`**${current.skytext}**`)
     .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `https://i.imgur.com/uiW0eUg.png`) 
-  .setColor('#8ECCCC')
+  .setColor('GOLD')
     .addField(':clock4: Fuso Horário',`UTC${location.timezone}`, true) 
         .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n${current.temperature}°C Atual\n${forecast.low}°C Minima`, true)
     .addField(':cold_sweat:  Sensação Térmica', `${current.feelslike} °C`, true)
@@ -88,6 +88,4 @@ const config = {
 
       }};
 
-    }
-
-       
+    
