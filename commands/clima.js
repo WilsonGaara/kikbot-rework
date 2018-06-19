@@ -1,8 +1,8 @@
 exports.run = (client, message, args)  => {
       
   
-    if(!(message.guild.member(client.user).hasPermission("EMBED_LINKS"))) {
-        message.channel.send(":no_entry_sign: **l** Oops! \n Pelo jeito não tenho a permissão (`EMBED_LINKS`) \n \n Como arrumar \n \n :cop: Fale com um administrador para me dar esta permissão!")
+    if(!(message.guild.member(client.user).hasPermission("SEND_LINKS"))) {
+        message.channel.send(":no_entry_sign: **l** Oops! \n Pelo jeito não tenho a permissão (`SEND_LINKS`) \n \n Como arrumar \n \n :cop: Fale com um administrador para me dar esta permissão!")
     
       
       } else {
@@ -36,7 +36,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
     const embed = new Discord.RichEmbed()
     .setDescription(`**${current.skytext}**`)
     .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `https://i.imgur.com/uiW0eUg.png`) 
-  .setColor('#00FFFF')
+  .setColor('#8ECCCC')
     .addField(':clock4: Fuso Horário',`UTC${location.timezone}`, true) 
         .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n${current.temperature}°C Atual\n${forecast.low}°C Minima`, true)
     .addField(':cold_sweat:  Sensação Térmica', `${current.feelslike} °C`, true)
