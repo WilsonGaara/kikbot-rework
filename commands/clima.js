@@ -36,7 +36,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
     const embed = new Discord.RichEmbed()
     .setDescription(`**${current.skytext}**`)
     .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `https://i.imgur.com/uiW0eUg.png`) 
-  //  .setColor(`BLUE`)
+  .setColor('#00FFFF')
     .addField(':clock4: Fuso Horário',`UTC${location.timezone}`, true) 
         .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n${current.temperature}°C Atual\n${forecast.low}°C Minima`, true)
     .addField(':cold_sweat:  Sensação Térmica', `${current.feelslike} °C`, true)
@@ -52,8 +52,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
     .setFooter(`Utilidade`, message.author.displayAvatarURL)
    
     message.channel.send({embed});
-    if(current.temperature > 27) return message.reply(`:warning: Temperatura elevada!`);
-        if(current.temperature < 18) return message.reply(`:warning: Temperatura baixa :snowflake: `);
+
 // Aqui vai enviar a msg pra o canal onde o comando foi executado!
 
 const config = {
