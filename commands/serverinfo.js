@@ -1,6 +1,6 @@
-exports.run = (client, message, args)  => { 
+exports.run = (message, args)  => { 
 
-
+const client = const client = new Discord.Client({fetchAllMembers: true});
         
     
 	const moment = require('moment');
