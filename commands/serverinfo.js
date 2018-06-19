@@ -163,7 +163,7 @@ exports.run = (client, message, args)  => {
 					let fala = `${message.guild.iconURL}`
 				var convert = fala.replace('jpg', 'png');
 			
-			   if(!client.guilds.get(args[0])) {
+			   if(!client.guilds.get(args[0])) { message.channel.send("Certifique-se que estou no servidor que você colocou, caso não colocou nenhum, está as informações do atual...")
 				var embed2 = new Discord.RichEmbed()
 				.setAuthor(message.guild, convert)
 				.setDescription(grandi())
@@ -173,7 +173,7 @@ exports.run = (client, message, args)  => {
 				.addField(`💬 Canais (${message.guild.channels.size})`, `:pencil: **Texto:** ${message.guild.channels.filter(channel => channel.type == 'text').size}\n:speaking_head: **Voz:** ${message.guild.channels.filter(channel => channel.type == 'voice').size}`, true)
 				.addField(`📅 Criado em`, moment(message.guild.createdAt).format('lll'), true)
 				.addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
-				.addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** ${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
+				.addField(`👥 Membros (${message.guild.memberCount})`, `🙋 **Pessoas:** <:on:458739760031072257> **Na escuta:** ${message.guild.presences.filter(channel => channel.status == 'online').size} | <:idle:458739689093070849> **Ausentes:** ${message.guild.presences.filter(channel => channel.status == 'idle').size} | <:dnd:458739641109970956> **Ocupados:** ${message.guild.presences.filter(channel => channel.status == 'dnd').size} | <:off:458739725457424384> **Off-lines:** ${message.guild.presences.filter(channel => channel.status == 'offline').size}\n${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
 				.setColor('BLUE')
 				.setThumbnail(convert)
 				.setTimestamp()
@@ -191,7 +191,7 @@ exports.run = (client, message, args)  => {
 			.addField(`💬 Canais (${client.guilds.get(args[0]).channels.size})`, `:pencil: **Texto:** ${client.guilds.get(args[0]).channels.filter(channel => channel.type == 'text').size}\n:speaking_head: **Voz:** ${client.guilds.get(args[0]).channels.filter(channel => channel.type == 'voice').size}`, true)
 			.addField(`📅 Criado em`, moment(client.guilds.get(args[0]).createdAt).format('lll'), true)
 			.addField(`🌟 Entrei aqui em`,moment(client.guilds.get(args[0]).joinedAt).format(`lll`), true)
-			.addField(`👥 Membros (${client.guilds.get(args[0]).memberCount})`, `🙋 **Pessoas:** ${client.guilds.get(args[0]).memberCount - client.guilds.get(args[0]).members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${client.guilds.get(args[0]).members.filter(member => member.user.bot).size}`, true)
+			.addField(`👥 Membros (${client.guilds.get(args[0]).memberCount})`, `🙋 **Pessoas:** <:on:458739760031072257> **Na escuta:** ${client.guilds.get(args[0]).presences.filter(channel => channel.status == 'online').size} | <:idle:458739689093070849> **Ausentes:** ${client.guilds.get(args[0]).presences.filter(channel => channel.status == 'idle').size} | <:dnd:458739641109970956> **Ocupados:** ${client.guilds.get(args[0]).presences.filter(channel => channel.status == 'dnd').size} | <:off:458739725457424384> **Off-lines:** ${client.guilds.get(args[0]).presences.filter(channel => channel.status == 'offline').size}\n${client.guilds.get(args[0]).memberCount - client.guilds.get(args[0]).members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${client.guilds.get(args[0]).members.filter(member => member.user.bot).size}`, true)
 			.setColor('BLUE')
 			.setThumbnail(convert2)
 			.setTimestamp()
