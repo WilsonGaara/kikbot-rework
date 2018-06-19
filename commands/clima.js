@@ -1,9 +1,6 @@
 exports.run = (client, message, args)  => {
-      
-  if(!message.guild.member(client.user.id).hasPermission("EMBED_LINKS")) { 
-    return message.channel.send(`${message.author} <:err:49743511391305748> **|** Oops, desculpe. Você precisa me fornecer a permissão: `+'`[EMBED_LINKS]`')
-} else {
- 
+
+    if(!message.guild.member(client.user.id).hasPermission("EMBED_LINKS")) { message.channel.send(`${message.author} <:err:49743511391305748> **|** Oops, desculpe. Você precisa me fornecer a permissão: `+'`[EMBED_LINKS]`')} else {
 
       
     var weather = require('weather-js');
@@ -91,6 +88,6 @@ const config = {
 
       }};
 
-  
+    }
 
        
