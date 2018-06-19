@@ -1,5 +1,5 @@
 exports.run = (message, args)  => { 
-
+const Discord = require('discord.js')
 const client = new Discord.Client({fetchAllMembers: true});
         
     
@@ -137,7 +137,7 @@ const client = new Discord.Client({fetchAllMembers: true});
 	   string  += `${message.guild.roles.array()[i].name}` + `, `;
 	
 	}
-	  const Discord = require('discord.js')
+	  
 	
 	 ;
 	  function grandi(){
