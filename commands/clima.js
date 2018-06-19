@@ -1,8 +1,11 @@
 exports.run = (client, message, args)  => {
 
-    if(!message.guild.member(client.user.id).hasPermission("EMBED_LINKS")) { message.channel.send(`${message.author} <:err:49743511391305748> **|** Oops, desculpe. Você precisa me fornecer a permissão: `+'`[EMBED_LINKS]`')} else {
+ 
+         if(message.guild.member(client.user.id).hasPermission("EMBED_LINKS")) {  message.channel.send(`${message.author} <:err:49743511391305748> **|** Oops, desculpe. Você precisa me fornecer a permissão: `+'`[EMBED_LINKS]`')} else {
 
-      
+           
+            
+        
     var weather = require('weather-js');
 weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) { 
     const Discord2 = require('discord.js');
@@ -32,7 +35,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
     const embed = new Discord.RichEmbed()
     .setDescription(`**${current.skytext}**`)
     .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `https://i.imgur.com/uiW0eUg.png`) 
-  .setColor('GOLD')
+  .setColor('#8ECCCC')
     .addField(':clock4: Fuso Horário',`UTC${location.timezone}`, true) 
         .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n${current.temperature}°C Atual\n${forecast.low}°C Minima`, true)
     .addField(':cold_sweat:  Sensação Térmica', `${current.feelslike} °C`, true)
@@ -82,10 +85,7 @@ const config = {
           
   //accuweatherSimple.getWeather(`${args.join(` `)}`).then(result => message.reply('**Previsão, olhar para o futuro** \n` '+ result))
           
+})
+}
 
-});
-
-
-      }};
-
-    
+      }
