@@ -18,7 +18,7 @@ if (message.mentions.users.first().id === message.author.id) return message.repl
 .setDescription(`⚠ **l** Você foi reportado! \n Motivo: ${reason} Fique mais atento!`)
 user.send({embed});
   message.reply(`:white_check_mark: Prontinho!`,2500)
-  channel.send(` :warning: **l** ${user} foi reportado por: ${message.author}  ("${reason}")`).then(message => {
+  channel.send(`<:kikbotcuted:458296375793418240> **|** ${user} foi reportado por: ${message.author}  \n**"${reason}"**`).then(message => {
     message.react(`✅`)
     message.react(`<:err:449743511391305748>`)
 
