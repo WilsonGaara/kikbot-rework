@@ -38,7 +38,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
   .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `https://i.imgur.com/uiW0eUg.png`) 
 .setColor('GOLD')
   .addField(':clock4: Fuso Horário',`UTC${location.timezone}`, true) 
-      .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n${current.temperature}°C Atual\n${forecast.low}°C Minima`, true)
+      .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n${current.temperature}°C **Atual**\n${forecast.low}°C Minima`, true)
   .addField(':cold_sweat:  Sensação Térmica', `${current.feelslike} °C`, true)
   .addField(':wind_blowing_face: Velocidade do vento',current.winddisplay, true)
   .addField(`:date: Data`, current.date, true)
@@ -63,7 +63,7 @@ const config = {
 
 const accuweatherSimple = require('accuweather-simple')(config);
 
-message.channel.send('**QUER SABER MAIS?**\nReaja => :white_check_mark:').then(newMsg => {
+message.channel.send('**QUER SABER MAIS?**').then(newMsg => {
     newMsg.react('✅');
  const collector = newMsg.createReactionCollector((r, u) => (r.emoji.name === '✅') && u.id == message.author.id);
 
