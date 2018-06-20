@@ -38,5 +38,11 @@ const embede = new Discord.RichEmbed()
 .setDescription('_Comandos para ajudar no dia a dia :sunglasses: _\n\nk!clima `<cidade>` **|** Mostra as condições climáticas de um lugar na Terra.\nk!steam `<url.steam.perfil>` **|** Mostra informações pelo URL de perfil ou Id64 Steam de um usuário Steam.\nk!traduzir `<lingua>` `<texto>` **|** Traduza um texto usando a Google Tradutor API.')
 .setColor(random)
 message.author.send({embed : embede})
+var embedz = new Discord.RichEmbed()
+.setDescription('Em breve | Coming soon')
+.setColor(random)
+.setTimestamp()
+.setFooter(client.user.tag, message.author.displayAvatarURL)
+message.author.send({embed : embedz})
 }
 
