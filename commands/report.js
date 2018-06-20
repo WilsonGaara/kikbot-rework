@@ -20,8 +20,7 @@ if (message.mentions.users.first().id === message.author.id) return message.repl
 .setFooter('Moderação', client.user.avatarURL)
 user.send({embed});
   message.reply(`:white_check_mark: Prontinho!`,2500)
-  channel.send(`<:kikbotcuted:458296375793418240> **|** ${user} foi reportado por: ${message.author}  \n**"${reason}"**`).then(message => {
-    message.react(`✅`)
-    message.react(`449743511391305748`)
-
+  channel.send(`<:kikbotcuted:458296375793418240> **|** ${user} foi reportado por: ${message.author}  \n**"${reason}"**`).then(message2 => {
+    message2.react(`✅`)
+message2.react(":err:449743511391305748")
 })}
