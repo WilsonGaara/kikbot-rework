@@ -7,6 +7,7 @@ exports.run = (client, message, args)  => {
     user = message.author.username
     userfoto = message.author.avatarURL;
   }
+if(message.mentions.users.size < 1)  message.reply(':x: **|** Oops, mencione alguem antes. Exemplo(example): k!wasted @kikbot')
     var Jimp = require("jimp")
     let img    = Jimp.read('./mine.png'),// vAI PEGAR A IMAGEM NORMAL
     avatar = Jimp.read(message.author.displayAvatarURL)
