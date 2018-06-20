@@ -49,7 +49,10 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
 });
 
 client.on("message", message => {
-  
+  if(message.content.includes( '<@431271825763467264>')){
+message.channel.send('<:kikbotcuted:458296375793418240> **|** Menção, ah!\nMeu prefixo é k!, experimenta usar k!help :wink: ')
+}
+});
   if(!message.guild) return;
   if (message.author.bot) return;
   if (!message.content.startsWith(config.prefix)) return;
@@ -68,7 +71,7 @@ client.on("message", message => {
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
   
-    var texto = ['1', '2', '3', '4', '5', '6', '7', '8', '123', '11', '23']
+    var texto = ['1', '2', '3', '4', '5', '6', '7', '8', '123', '11', '23', 30]
  const random = texto[Math.floor(Math.random() * texto.length)];
  const Discord2 = require('discord.js');
 var embed1 = new Discord2.RichEmbed()
