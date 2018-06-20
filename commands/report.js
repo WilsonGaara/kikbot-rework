@@ -1,10 +1,10 @@
 exports.run = (client, message, args)  => {
 message.delete()
-
-  let user = message.mentions.users.first()
+ let reason = args.slice(1).join(' ');
+  let user = message.mentions.users.first();
 
   if (message.mentions.users.first().size < 1) return message.reply('Mencione alguém').catch(console.error);
-  if (args.length < 1) return message.reply('<:err:449743511391305748> **|** Você não usou o comando corretamente, tente usa-lo desta forma: \nk!report @Alguém Flood');
+  if (reason.length < 1) return message.reply('<:err:449743511391305748> **|** Você não usou o comando corretamente, tente usa-lo desta forma: \nk!report @Alguém Flood');
 if (message.mentions.users.first().id === message.author.id) return message.reply(`Se reportar?!`)
   if (message.mentions.users.first().id === client.user.id) return message.reply(`O que que eu fiz ;( `)
   const channel = message.guild.channels.find('name', 'kik-modlogs');
@@ -15,12 +15,12 @@ if (message.mentions.users.first().id === message.author.id) return message.repl
   const Discord = require('discord.js');
   const embed = new Discord.RichEmbed()
   .setColor(`RED`)
-.setDescription(`⚠ **l** Você foi reportado! \n Motivo: ${args} Fique mais atento!`)
+.setDescription(`⚠ **l** Você foi reportado! \n Motivo: ${reason} Fique mais atento!`)
 .setTimestamp()
 .setFooter('Moderação', client.user.avatarURL)
 user.send({embed});
   message.reply(`:white_check_mark: Prontinho!`,2500)
-  channel.send(`<:kikbotcuted:458296375793418240> **|** ${user} foi reportado por: ${message.author}  \n**"${args}"**`).then(message2 => {
+  channel.send(`<:kikbotcuted:458296375793418240> **|** ${user} foi reportado por: ${message.author}  \n**"${reason}"**`).then(message2 => {
     message2.react(`✅`)
 message2.react(":err:449743511391305748")
 })}
