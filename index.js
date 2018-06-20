@@ -52,7 +52,7 @@ client.on("message", message => {
   if(message.content.includes( '<@431271825763467264>')){
 message.channel.send('<:kikbotcuted:458296375793418240> **|** Menção, ah!\nMeu prefixo é k!, experimenta usar k!help :wink: ')
 }
-});
+
   if(!message.guild) return;
   if (message.author.bot) return;
   if (!message.content.startsWith(config.prefix)) return;
