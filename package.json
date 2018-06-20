@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "accuweather-simple": "^0.1.0",
-    "croyale": "^2.2.2",
+    "ms": "^2.1.1",
     "discord.js": "^11.3.2",
     "google": "^2.1.0",
     "util": "^0.11.0",
