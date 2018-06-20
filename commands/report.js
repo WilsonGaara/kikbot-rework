@@ -22,6 +22,6 @@ user.send({embed});
   message.reply(`:white_check_mark: Prontinho!`,2500)
   channel.send(`<:kikbotcuted:458296375793418240> **|** ${user} foi reportado por: ${message.author}  \n**"${reason}"**`).then(message => {
     message.react(`✅`)
-    message.react(`<:err:449743511391305748>`)
+    message.react(`449743511391305748`)
 
 })}
