@@ -22,7 +22,7 @@ message.author.send({embed : embedb})
 const embedc = new Discord.RichEmbed()
 .setTitle('👮 Administração e Segurança')
 .setThumbnail(client.user.avatarURL)
-.setDescription('_Nestes comandos eu administro o servidor por ordem de outro administrador_\n\nk!mute `<usuário.mencionado>` `<tempo>` **|** Silencia alguém no servidor. Por determinado tempo, exemplo: k!mute **usuário** 10. Ele vai silenciar o usuário por 10 minutos.\nk!mute**s** `<usuario.mencionado>` `<tempo>` **|** Silencia o usuário mencionado. Por determinado tempo Ex: k!mutes **usuário** 10. Silencia o usuário por dez segundos.\nk!report `<usuario.mencionado>` `<razão/motivo>` **|** Reporta algum usuário e manda em um canal que precisa ser chamado de `#kik-modlogs`\nk!ban `<usuário.mencionado>` `(razão/motivo)`**|** Pune o usuário mencionado do servidor atual.')
+.setDescription('_Nestes comandos eu administro o servidor por ordem de outro administrador_\n\nk!mute `<usuário.mencionado>` `<tempo>` **|** Silencia alguém no servidor. Por determinado tempo, exemplo: k!mute **usuário** 10m. Ele vai silenciar o usuário por 10 minutos.\nk!report `<usuario.mencionado>` `<razão/motivo>` **|** Reporta algum usuário e manda em um canal que precisa ser chamado de `#kik-modlogs`\nk!ban `<usuário.mencionado>` `(razão/motivo)`**|** Pune o usuário mencionado do servidor atual.')
 .setColor(random)
 
 message.author.send({embed : embedc})
