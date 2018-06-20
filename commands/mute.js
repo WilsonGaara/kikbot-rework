@@ -22,7 +22,7 @@ var ms = require('ms');
       .setDescription('Você foi desmutado. Tempo: `'+args+'`.\nServidor: **'+message.guild+'**')
       .setFooter('kikbot | unmute', client.user.avatarURL)
       message.mentions.members.first().send({embed : embed})
-  }, ms(args[0]))
+  }, ms(args))
 
       }
 
