@@ -71,7 +71,7 @@ message.channel.send('<:kikbotcuted:458296375793418240> **|** Menção, ah!\nMeu
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
   
-    var texto = ['1', '2', '3', '4', '5', '6', '7', '8', '123', '11', '23', 30]
+    var texto = ['2', '4', '3', '10', '12', '17', '23', '230']
  const random = texto[Math.floor(Math.random() * texto.length)];
  const Discord2 = require('discord.js');
 var embed1 = new Discord2.RichEmbed()
