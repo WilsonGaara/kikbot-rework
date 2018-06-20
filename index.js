@@ -49,8 +49,13 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
 });
 
 client.on("message", message => {
-  if(message.content.includes( '<@431271825763467264>')){
-message.channel.send('<:kikbotcuted:458296375793418240> **|** Menção, ah!\nMeu prefixo é k!, experimenta usar k!help :wink: ')
+  if(message.content == '<@431271825763467264>'){
+var embedz = new Discord.RichEmbed()
+.setAuthor('Oi, perdido?!', message.author.displayAvatarURL)
+.setDescription('<:kikbotcuted:458296375793418240> **|** Se você está perdido em prefixos, meu prefixo é `k!`')
+.setTimestamp()
+.setFooter('A bot for Discord, brazilian... Kikbot', client.user.avatarURL)
+message.channel.send({embed : embedz})
 }
 
   if(!message.guild) return;
