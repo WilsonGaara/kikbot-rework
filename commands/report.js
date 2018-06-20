@@ -4,7 +4,7 @@ message.delete()
   let user = message.mentions.users.first()
 
   if (message.mentions.users.first().size < 1) return message.reply('Mencione alguém').catch(console.error);
-  if (args.length < 22) return message.reply('<:err:449743511391305748> **|** Você não usou o comando corretamente, tente usa-lo desta forma: \nk!report @Alguém Flood');
+  if (args.length < 1) return message.reply('<:err:449743511391305748> **|** Você não usou o comando corretamente, tente usa-lo desta forma: \nk!report @Alguém Flood');
 if (message.mentions.users.first().id === message.author.id) return message.reply(`Se reportar?!`)
   if (message.mentions.users.first().id === client.user.id) return message.reply(`O que que eu fiz ;( `)
   const channel = message.guild.channels.find('name', 'kik-modlogs');
