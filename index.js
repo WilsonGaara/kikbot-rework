@@ -82,10 +82,10 @@ message.channel.send({embed : embedz})
  const Discord2 = require('discord.js');
 var embed1 = new Discord2.RichEmbed()
 
-.setDescription('<:kikbotcuted:458296375793418240> **|** Vejo que está gostando de meus comandos, se ainda não divulgou o **kikbot** para seus amigos. Peço que por favor, me divulgue, isso ajuda bastante.\n[Clique aqui para me adcionar em algum servidor.](https://discordapp.com/api/oauth2/authorize?client_id=431271825763467264&permissions=36826310&scope=bot)')
+.setDescription('<:kikbotcuted:458296375793418240> **|** Vejo que está gostando de meus comandos, se ainda não divulgou o **kikbot** para seus amigos. Peço que por favor, me divulgue, isso ajuda bastante.\n[Clique aqui para me adicionar em algum servidor.](https://discordapp.com/api/oauth2/authorize?client_id=431271825763467264&permissions=36826310&scope=bot)')
 .setTimestamp()
 .setColor('BLUE')
-.setFooter(message.author.tag, client.user.avatarURL)
+.setFooter('A bot for Discord, brazilian... Kikbot', client.user.avatarURL)
 if(random == '2') return message.channel.send({embed : embed1})
   } catch (err) {
     console.error(err);
