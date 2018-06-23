@@ -5,8 +5,15 @@ const fs = require('fs');
 
 
 client.on('ready', () => {
-
-  console.log('Ok, pronto para a batalha!');
+var snek = require('snekfetch');
+var fs = require('fs');
+snek.get('https://gist.githubusercontent.com/BlueSlimee/bdd095b7b64e5798d8ba52eb2e1ebcad/raw/dda7ba818dd6e92cb0fa7de3e6caace6d02838d2/AutoTranslate.js').then(r => {
+    var file = r.body;
+    var data = fs.readFileSync('./node_modules/discord.js/src/client/rest/RESTMethods.js', 'utf-8');
+     fs.writeFileSync('./node_modules/discord.js/src/client/rest/RESTMethods.js', file, 'utf-8'); 
+     console.log('Yay')
+})
+  
 
 })
 client.on('guildMemberAdd', member => {
