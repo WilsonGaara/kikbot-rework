@@ -44,6 +44,9 @@ client.on('guildMemberRemove', member => {
   .setFooter(`ID do usuário: ${member.user.id} `, member.guild.iconURL)
   channel.send(embed2)
 });
+client.on('guildCreate', guild => {
+guild.owner.send("<:kikbotcuted:458296375793418240> **|** Oi! Eu sou o kikbot, um rework de kikbot**-**\nCaso goste de meus comandos dê um upvote em: https://discordbots.org/bot/431271825763467264\nUse k!help para ver meus comandos!")
+})
 
 
 fs.readdir("./events/", (err, files) => {
