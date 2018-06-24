@@ -87,7 +87,7 @@ message.channel.send({embed : embedz})
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
   
-    var texto = ['2', '1, '3', '10', '12', '17', '23', '230']
+    var texto = ['2', '1', '3', '10', '12', '17', '23', '230']
  const random = texto[Math.floor(Math.random() * texto.length)];
  const Discord2 = require('discord.js');
 var embed1 = new Discord2.RichEmbed()
