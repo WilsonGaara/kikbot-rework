@@ -5,8 +5,8 @@ exports.run = (client, message, args)  => {
       var args = args.slice(1).join(' ');
       if(args.length < 1) return message.reply(`Oops! Você não digitou nada como tempo. Exemplo k!mute @Alguém 1m Ele vai silenciar @eu por 1 minuto. k!mutes @eu 1. Ele irá silenciar @eu por 1 minuto`)
   if(!message.member.hasPermissions(["MANAGE_GUILD"])) return message.reply("Você não tem direito de gerenciar o servidor!");
-  let cargokik = message.guild.roles.find("name", "Muted");
-  if(!cargokik) return message.reply(":x: Não vi nenhum cargo com o nome de `Muted`");
+  let cargokik = message.guild.roles.find("name", "🤐|Mutado");
+  if(!cargokik) return message.reply(":x: Não vi nenhum cargo com o nome de `🤐|Mutado`");
   let membro = message.mentions.members.first(); 
 
   membro.addRole(cargokik);
