@@ -8,7 +8,7 @@ const moment = require('moment');
 exports.run = (client, message, args)  => {
  
     steam.resolve(args.join(' ')).then(id => {
- if(!steam) return message.reply('<:err:449743511391305748> **|** Você precisa inserir um id da steam válido, o que vem depois de steamcommunity.com/profiles/**seuid** ele pode até ser o seu personalizado.');
+ if(id.length < 1) return message.reply('<:err:449743511391305748> **|** Você precisa inserir um id da steam válido, o que vem depois de steamcommunity.com/profiles/**seuid** ele pode até ser o seu personalizado.');
         steam.getUserSummary(id).then(summary => {
     const embed = new Discord.RichEmbed()
     .setAuthor(summary.nickname, summary.avatar.large)
@@ -21,7 +21,7 @@ message.channel.send({embed: embed});
    //BLABLA
      
         const afk = games.map(g => g.name).join("\n")
- if(afk.length < 1) {
+ if(!afk) {
 
       const Discord2 = require('discord.js')
       const embed2 = new Discord2.RichEmbed()
