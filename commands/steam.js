@@ -10,7 +10,7 @@ exports.run = (client, message, args)  => {
     steam.resolve(args.join(' ')).then(id => {
  
         steam.getUserSummary(id).then(summary => {
-          if(summary.steamID.length < 1) return message.reply('<:err:449743511391305748> **|** Você precisa inserir um id da steam válido, o que vem depois de steamcommunity.com/profiles/**seuid** ele pode até ser o seu personalizado.');
+          if(!summary) return message.reply('<:err:449743511391305748> **|** Você precisa inserir um id da steam válido, o que vem depois de steamcommunity.com/profiles/**seuid** ele pode até ser o seu personalizado.');
     const embed = new Discord.RichEmbed()
     .setAuthor(summary.nickname, summary.avatar.large)
 .setThumbnail(summary.avatar.large)
