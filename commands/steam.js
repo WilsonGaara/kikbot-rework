@@ -6,7 +6,7 @@ const moment = require('moment');
 //VARIAVEIS
 
 exports.run = (client, message, args)  => {
- 
+ if(args.join(' ').length < 1) return message.reply('<:err:449743511391305748> **|** Você precisa inserir um id da steam válido, o que vem depois de steamcommunity.com/profiles/**seuid** ele pode até ser o seu personalizado.');
     steam.resolve(args.join(' ')).then(id => {
  if(!id) return message.reply('<:err:449743511391305748> **|** Você precisa inserir um id da steam válido, o que vem depois de steamcommunity.com/profiles/**seuid** ele pode até ser o seu personalizado.');
         steam.getUserSummary(id).then(summary => {
