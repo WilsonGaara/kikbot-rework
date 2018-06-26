@@ -39,7 +39,7 @@ message.channel.send({embed: embed});
   const Discord23 = require('discord.js')
   const embed2 = new Discord23.RichEmbed()
 .setAuthor('Jogos recentes de: '+summary.nickname, games.iconURL)
-.setDescription(`:white_check_mark: **|** Aqui está a lista de jogos recentes:\n${afk}}`)
+.setDescription(`:white_check_mark: **|** Aqui está a lista de jogos recentes:\n${afk}`)
 .setImage(games.logoURL)
 .setTimestamp()
 .setFooter('kikbot- | Steam', client.user.avatarURL)
