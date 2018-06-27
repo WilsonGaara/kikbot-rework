@@ -9,7 +9,7 @@ ytSearch(args.join(" "), async function (err, r) {
 video = videos[0]
    console.log(video)
 let musica = "www.youtube.com" + video.url
-
+let info2 = await ytdl.getInfo(musica)
    let voiceChannel = message.member.voiceChannel
   voiceChannel.join()
 
@@ -18,7 +18,9 @@ let musica = "www.youtube.com" + video.url
     const info = videos[ 0 ]
     const dispatcher = connection.playStream(stream)
 let embed = new Discord.RichEmbed()
-.setDescription(`💽 **|** Escutando agora: [${info.title}](https://www.youtube.com/${info.url})`)
+.setAuthor(info2.author.name, info2.author.avatar)
+.setThumbnail(info2.thumbnail_url)
+.setDescription(`💽 **|** Escutando agora: [${info.title}](https://www.youtube.com${info.url})`)
 message.channel.send(embed)
   })
 })}
