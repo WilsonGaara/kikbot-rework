@@ -14,8 +14,8 @@ weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
   const embed2 = new Discord2.RichEmbed()
 .setAuthor(message.author.tag, message.author.displayAvatarURL)
 .setColor('BLUE')
-.setTitle('k!clima')
-.setDescription('Exibe as condições climáticas atual de um especifico lugar!\n\n:information_desk_person: **Como usar:** k!clima cidade\n\n:book: **Exemplo:**\nk!clima `Caruaru`')
+.setTitle(':thinking: k!clima')
+.setDescription('Exibe as condições climáticas atual de um específico lugar!\n\n:information_desk_person: **Como usar:** k!clima cidade\n\n:book: **Exemplo:**\nk!clima `Caruaru`')
   .setFooter(`Utilitários • Website: kikbot-.glitch.me`, message.author.displayAvatarURL)
   if(args.length < 1) return message.channel.send({embed : embed2});
 
