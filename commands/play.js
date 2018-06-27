@@ -19,6 +19,6 @@ let musica = "www.youtube.com" + video.url
     const dispatcher = connection.playStream(stream)
 let embed = new Discord.RichEmbed()
 .setDescription(`💽 **|** Escutando agora: [${info.title}](https://www.youtube.com/${info.url})`)
-messag.channel.send(embed)
+message.channel.send(embed)
   })
 })}
