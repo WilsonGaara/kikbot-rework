@@ -35,7 +35,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
 
       // Vai constar a variável "embed" que vai dizer a API do discord que o robô irá fazer um embed rico.
   const embed = new Discord.RichEmbed()
-  .setDescription(`**${forecast.skytextday}**`)
+  .setDescription(`**${current.skytext}**`)
   .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `${client.user.avatarURL}`) 
 .setColor('GOLD')
   .addField(':clock4: Fuso Horário',`UTC${location.timezone}`, true) 
