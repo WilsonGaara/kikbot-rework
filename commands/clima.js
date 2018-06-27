@@ -14,7 +14,8 @@ weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
   const embed2 = new Discord2.RichEmbed()
 .setAuthor(message.author.tag, message.author.displayAvatarURL)
 .setColor('BLUE')
-.setDescription(':thinking: | k!clima\nVerifique a temperatura de uma cidade!\n\n:information_desk_person: **Como usar:** k!clima cidade\n\n:book: **Exemplo:**\nk!clima `Caruaru`')
+.setTitle('k!clima')
+.setDescription('Exibe as condições climáticas atual de um especifico lugar!\n\n:information_desk_person: **Como usar:** k!clima cidade\n\n:book: **Exemplo:**\nk!clima `Caruaru`')
   .setFooter(`Utilitários • Website: kikbot-.glitch.me`, message.author.displayAvatarURL)
   if(args.length < 1) return message.channel.send({embed : embed2});
 
@@ -35,7 +36,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
       // Vai constar a variável "embed" que vai dizer a API do discord que o robô irá fazer um embed rico.
   const embed = new Discord.RichEmbed()
   .setDescription(`**${current.skytext}**`)
-  .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `https://i.imgur.com/uiW0eUg.png`) 
+  .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `${client.user.avatarURL}`) 
 .setColor('GOLD')
   .addField(':clock4: Fuso Horário',`UTC${location.timezone}`, true) 
       .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n${current.temperature}°C **Atual**\n${forecast.low}°C Minima`, true)
