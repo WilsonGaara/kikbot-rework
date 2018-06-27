@@ -11,9 +11,8 @@ video = videos[0]
 let musica = "www.youtube.com" + video.url
 let info2 = await ytdl.getInfo(musica)
    let voiceChannel = message.member.voiceChannel
-   if(message.guild.members.get(client.user.id).voiceChannel) { 
-       continue
-   } else {
+  if(!voiceChannel) return message.reply('<:err:449743511391305748> **|** Aconteceu algum erro inesperado.')
+
    voiceChannel.join()
  
 
@@ -24,8 +23,8 @@ let info2 = await ytdl.getInfo(musica)
 let embed = new Discord.RichEmbed()
 .setAuthor(info2.author.name, info2.author.avatar)
 .setThumbnail(info2.thumbnail_url)
+.setColor(message.guild.member(message.author.id).displayHexColor)
 .setDescription(`💽 **|** Escutando agora: [${info.title}](https://www.youtube.com${info.url})`)
-.setFooter(`🎧 | Tocando em: ${message.member.voiceChannel.name}`)
+.setFooter(`🎧 | Tocando em: ${message.member.voiceChannel.name}`, client.user.avatarURL)
 message.channel.send(embed)
-  })
-}})}
+  })})}
