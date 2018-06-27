@@ -11,10 +11,10 @@ exports.run = async (client, message, args) => {
     let musica = "www.youtube.com" + video.url
     let info2 = await ytdl.getInfo(musica)
        let voiceChannel = message.member.voiceChannel
-      if(!voiceChannel) return message.reply('<:err:449743511391305748> **|** Aconteceu algum erro inesperado.')
+
     
        voiceChannel.join()
-     
+       if(!voiceChannel) return voiceChannel.leave()
     
       .then(connection => {
         const stream = ytdl(musica, { filter : 'audioonly' });
