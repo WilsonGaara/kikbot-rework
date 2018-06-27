@@ -14,24 +14,24 @@ exports.run = async (client, message, args) => {
 
     
        voiceChannel.join()
-       if(!voiceChannel) return voiceChannel.leave()
-    
+  
       .then(connection => {
         const stream = ytdl(musica, { filter : 'audioonly' });
         const info = videos[ 0 ]
-        let embed = new Discord.RichEmbed()
+      
+        const dispatcher = connection.playStream(stream)
+  let embed = new Discord.RichEmbed()
         .setAuthor(info2.author.name, info2.author.avatar)
         .setThumbnail(info2.thumbnail_url)
         .setColor(message.guild.member(message.author.id).displayHexColor)
         .setDescription(`💽 **|** Escutando agora: [${info.title}](https://www.youtube.com${info.url}) `+'`'+videos[ 0 ].duration.timestamp+'`')
         .setFooter(`🎧 | Tocando em: ${message.member.voiceChannel.name}`, client.user.avatarURL)
         message.channel.send(embed)
-        const dispatcher = connection.playStream(stream)
-        .on("end", () => {
-            message.channel.send('Música acabou!')
-            message.member.voiceChannel.leave();
-      })
-      dispatcher.setVolumeLogarithmic(5 / 5);
+     if(!voiceChannel) return voiceChannel.leave()
+    
+ 
+           
+
     });
 });
 };
