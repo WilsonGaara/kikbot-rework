@@ -38,7 +38,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
   .setDescription(`**${current.skytext}**`)
   .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `${client.user.avatarURL}`) 
 .setColor('GOLD')
-  .addField(':clock4: Fuso Horário',`UTC${location.timezone}`, true) 
+ .setThumbnail(current.imageUrl)
       .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n${current.temperature}°C **Atual**\n${forecast.low}°C Minima`, true)
   .addField(':cold_sweat:  Sensação Térmica', `${current.feelslike} °C`, true)
   .addField(':wind_blowing_face: Velocidade do vento',current.winddisplay, true)
