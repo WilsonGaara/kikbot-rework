@@ -10,4 +10,4 @@ let embed = new Discord.RichEmbed()
 .addField(':money_with_wings: Detalhes por preço', "Desconto de: "+summary.price_overview.discount_percent+"%")
 .setImage(summary.header_image)
 message.channel.send({embed : embed, translate: true, lang: "pt"})
-})
+})}
