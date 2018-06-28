@@ -22,6 +22,6 @@ let embed2 = new Discord.RichEmbed()
    })}
 
 } catch (e) {
-message.reply("<:err:449743511391305748> **|** Insira um ID de jogo na Steam válido por favor.")
+message.reply("<:err:449743511391305748> **|** Insira um ID de jogo na Steam válido por favor. (${e})")
 }
   
