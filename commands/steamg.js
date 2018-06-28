@@ -3,7 +3,8 @@ exports.run = async (client, message, args) => {
    const steam = new SteamAPI(process.env.STEAM);
 if(args.join(" ").length < 1) return message.reply("<:err:449743511391305748> **|** Insira o ID de algum jogo steam. store.steampowered.com/app/**322330**\n322330 seria o steam do jogo Don't Starve Together.")
    steam.getGameDetails(args[0]).then(summary => {
-
+if(!steam) return message.reply("<:err:449743511391305748> **|** Insira o ID de algum jogo steam. store.steampowered.com/app/**322330**\n322330 seria o steam do jogo Don't Starve Together.")
+if(!summary) return message.reply("<:err:449743511391305748> **|** Insira o ID de algum jogo steam. store.steampowered.com/app/**322330**\n322330 seria o steam do jogo Don't Starve Together.")
    const Discord = require('discord.js')
 let embed2 = new Discord.RichEmbed()
  .setAuthor(summary.name, 'https://webrazzi.com/wp-content/uploads/2013/01/steam.png')
