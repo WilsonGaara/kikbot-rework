@@ -38,7 +38,7 @@ return message.channel.send('<:err:449743511391305748> **|** Você não acertou 
       if(collected == random) {
 message.delete()
         message.guild.member(message.author.id).addRole(CaptchaRole.id).catch(console.error);
-        message.author.send(`Cargo adcionado em: ${message.guild}`)
+        message.author.send(`Cargo adicionado em: ${message.guild}`)
       message.channel.send(':white_check_mark: **|** Mano do céu, conseguiu brother.').then(message1 => {
         setInterval(() => {
           message1.delete()
