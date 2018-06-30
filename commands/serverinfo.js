@@ -171,7 +171,7 @@ function grandi2(){
 			
 
 								let fala = message.guild.iconURL
-if(fala == null) return "https://cdn.discordapp.com/icons/449268692639809555/742f097d2915a490982fc82d6fc6edd8.jpg";
+if(fala == null) fala.replace('null', 'https://cdn.discordapp.com/icons/449268692639809555/742f097d2915a490982fc82d6fc6edd8.jpg')
 							var convert = fala.replace('jpg', 'png');
 
 
@@ -194,7 +194,7 @@ if(fala == null) return "https://cdn.discordapp.com/icons/449268692639809555/742
 							 } else {
 
 							let fala2 = client.guilds.get(args[0]).iconURL
-if(fala2 == null) return "https://cdn.discordapp.com/icons/449268692639809555/742f097d2915a490982fc82d6fc6edd8.jpg";
+if(fala2 == null) fala.replace('null', 'https://cdn.discordapp.com/icons/449268692639809555/742f097d2915a490982fc82d6fc6edd8.jpg')
 							var convert2 = fala2.replace('jpg', 'png')
 
 						var embed1 = new Discord.RichEmbed()
