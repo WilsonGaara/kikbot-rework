@@ -171,16 +171,10 @@ function grandi2(){
 			
 
 								let fala = message.guild.iconURL
+if(fala == null) return "https://cdn.discordapp.com/icons/449268692639809555/742f097d2915a490982fc82d6fc6edd8.jpg";
 							var convert = fala.replace('jpg', 'png');
-if(!convert) return 
-	function img1(){
 
-    if(fala != null){
-		return convert;
-    }else{
-        return "https://cdn.discordapp.com/icons/449268692639809555/742f097d2915a490982fc82d6fc6edd8.png";
-    }
-}
+
 							 if(!client.guilds.get(args[0])) {
 							var embed2 = new Discord.RichEmbed()
 							.setTitle(message.guild)
@@ -193,24 +187,18 @@ if(!convert) return
 							.addField(`🌟 Entrei aqui em`,moment(message.guild.joinedAt).format(`lll`), true)
 							.addField(`👥 Membros (${message.guild.memberCount})`, `<:on:458739760031072257> **Online:** ${message.guild.presences.filter(channel => channel.status == 'online').size} <:idle:458739689093070849> **Ausente:** ${message.guild.presences.filter(channel => channel.status == 'idle').size} <:dnd:458739641109970956> **Ocupado:** ${message.guild.presences.filter(channel => channel.status == 'dnd').size} <:off:458739725457424384> **Offline:** ${message.guild.members.filter(member => member.user.presence.status === 'offline').size}\n🙋 **Pessoas:** ${message.guild.memberCount - message.guild.members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${message.guild.members.filter(member => member.user.bot).size}`, true)
 							.setColor('BLUE')
-							.setThumbnail(img1())
+							.setThumbnail(convert)
 							.setTimestamp()
 							.setFooter(message.guild, message.author.displayAvatarURL)
 									return message.channel.send({embed: embed2});
 							 } else {
 
 							let fala2 = client.guilds.get(args[0]).iconURL
+if(fala2 == null) return "https://cdn.discordapp.com/icons/449268692639809555/742f097d2915a490982fc82d6fc6edd8.jpg";
 							var convert2 = fala2.replace('jpg', 'png')
-if(!convert2) return 
-function img2(){
-       if(fala2 != null){
-		return convert2;
-    }else{
-        return "https://cdn.discordapp.com/icons/449268692639809555/742f097d2915a490982fc82d6fc6edd8.png";
-    }
-}
+
 						var embed1 = new Discord.RichEmbed()
-						.setAuthor(client.guilds.get(args[0]).name, img2())
+						.setAuthor(client.guilds.get(args[0]).name, convert2)
 						.setDescription(grandi2())
 						.addField('💻 ID' , client.guilds.get(args[0]).id, true)
 						.addField('👑 Dono', client.guilds.get(args[0]).owner, true)
@@ -220,7 +208,7 @@ function img2(){
 						.addField(`🌟 Entrei aqui em`,moment(client.guilds.get(args[0]).joinedAt).format(`lll`), true)
 						.addField(`👥 Membros (${client.guilds.get(args[0]).memberCount})`, `<:on:458739760031072257> **Online:** ${client.guilds.get(args[0]).presences.filter(channel => channel.status == 'online').size} <:idle:458739689093070849> **Ausente:** ${client.guilds.get(args[0]).presences.filter(channel => channel.status == 'idle').size} <:dnd:458739641109970956> **Ocupado:** ${client.guilds.get(args[0]).presences.filter(channel => channel.status == 'dnd').size} <:off:458739725457424384> **Offline:** ${client.guilds.get(args[0]).members.filter(member => member.user.presence.status === 'offline').size}\n🙋 **Pessoas:** ${client.guilds.get(args[0]).memberCount - client.guilds.get(args[0]).members.filter(member => member.user.bot).size}\n🤖 **Robôs:** ${client.guilds.get(args[0]).members.filter(member => member.user.bot).size}`, true)
 						.setColor('BLUE')
-						.setThumbnail(img2())
+						.setThumbnail(convert2)
 						.setTimestamp()
 						.setFooter(client.guilds.get(args[0]).name, message.author.displayAvatarURL)
 								
