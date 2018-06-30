@@ -3,7 +3,7 @@ exports.run = (client, message, args)  => {
       message.channel.sendMessage(':x: **|** Oops! Não tenho a permissão `MANAGE_ROLES`.');
    } else {
       var args = args.slice(1).join(' ');
-      if(args.length < 1) return message.reply(`Oops! Você não digitou nada como tempo. Exemplo k!mute @Alguém 1m Ele vai silenciar @eu por 1 minuto. k!mutes @eu 1. Ele irá silenciar @eu por 1 minuto`)
+      if(args.length < 1) return message.reply(`<:err:449743511391305748> **|** Use o comando de maneira correta por favor. Exemplo: k!mute @kikbot 1m Irá me silenciar por 1 minuto`)
   if(!message.member.hasPermissions(["MANAGE_GUILD"])) return message.reply("Você não tem direito de gerenciar o servidor!");
   let cargokik = message.guild.roles.find("name", "🤐|Mutado");
   if(!cargokik) return message.reply(":x: Não vi nenhum cargo com o nome de `🤐|Mutado`");
