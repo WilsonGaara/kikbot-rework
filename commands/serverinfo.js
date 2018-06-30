@@ -173,9 +173,9 @@ function grandi2(){
 								let fala = `${message.guild.iconURL}`
 							var convert = fala.replace('jpg', 'png');
 	function img1(){
-    var afk = convert
-    if(afk != null){
-		return afk;
+
+    if(convert != null){
+		return convert;
     }else{
         return "https://cdn.discordapp.com/icons/449268692639809555/742f097d2915a490982fc82d6fc6edd8.png";
     }
@@ -201,9 +201,8 @@ function grandi2(){
 							let fala2 = client.guilds.get(args[0]).iconURL
 							var convert2 = fala2.replace('jpg', 'png')
 function img2(){
-    var afk = convert2
-    if(afk != null){
-		return afk;
+       if(convert2 != null){
+		return convert2;
     }else{
         return "https://cdn.discordapp.com/icons/449268692639809555/742f097d2915a490982fc82d6fc6edd8.png";
     }
