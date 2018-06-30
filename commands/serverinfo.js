@@ -210,7 +210,7 @@ function img2(){
     }
 }
 						var embed1 = new Discord.RichEmbed()
-						.setAuthor(client.guilds.get(args[0]).name, convert2)
+						.setAuthor(client.guilds.get(args[0]).name, img2())
 						.setDescription(grandi2())
 						.addField('💻 ID' , client.guilds.get(args[0]).id, true)
 						.addField('👑 Dono', client.guilds.get(args[0]).owner, true)
