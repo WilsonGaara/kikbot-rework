@@ -172,6 +172,7 @@ function grandi2(){
 
 								let fala = message.guild.iconURL
 							var convert = fala.replace('jpg', 'png');
+if(!convert) return 
 	function img1(){
 
     if(fala != null){
@@ -200,6 +201,7 @@ function grandi2(){
 
 							let fala2 = client.guilds.get(args[0]).iconURL
 							var convert2 = fala2.replace('jpg', 'png')
+if(!convert2) return 
 function img2(){
        if(fala2 != null){
 		return convert2;
