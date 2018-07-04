@@ -57,11 +57,11 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
 });
 
 client.on("message", message => {
-  if(message.content == '<@431271825763467264>'){
+  if(message.content.includes('<@431271825763467264>'){
 var embedz = new Discord.RichEmbed()
 .setAuthor('Oi, perdido?!', message.author.displayAvatarURL)
 .setColor(message.guild.member(message.author.id).displayHexColor)
-.setDescription('<:kikbotcuted:458296375793418240> **|** Se você está perdido em prefixos, meu prefixo é `k!`')
+.setDescription('<:kikbotcuted:464125632058490901> **|** Se você está perdido em prefixos, meu prefixo é `k!`')
 .setTimestamp()
 .setFooter('A bot for Discord, brazilian... Kikbot')
 message.channel.send({embed : embedz})
@@ -90,7 +90,7 @@ message.channel.send({embed : embedz})
  const Discord2 = require('discord.js');
 var embed1 = new Discord2.RichEmbed()
 
-.setDescription('<:kikbotcuted:458296375793418240> **|** Vejo que está gostando de meus comandos, se ainda não divulgou o **kikbot** para seus amigos. Peço que por favor, me divulgue, isso ajuda bastante.\n[Clique aqui para me adicionar em algum servidor.](https://discordapp.com/api/oauth2/authorize?client_id=431271825763467264&permissions=36826310&scope=bot)\n<:dbl:460123322517028865> **|** Discord Bots: [Clique aqui!](https://discordbots.org/bot/431271825763467264)')
+.setDescription('<:kikbotcuted:464125632058490901> **|** Vejo que está gostando de meus comandos, se ainda não divulgou o **kikbot** para seus amigos. Peço que por favor, me divulgue, isso ajuda bastante.\n[Clique aqui para me adicionar em algum servidor.](https://discordapp.com/api/oauth2/authorize?client_id=431271825763467264&permissions=36826310&scope=bot)\n<:dbl:460123322517028865> **|** Discord Bots: [Clique aqui!](https://discordbots.org/bot/431271825763467264)')
 .setTimestamp()
 .setColor('BLUE')
 .setFooter('A bot for Discord, brazilian... Kikbot', client.user.avatarURL)
