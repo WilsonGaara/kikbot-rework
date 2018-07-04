@@ -57,7 +57,7 @@ client.on(eventName, (...args) => eventFunction.run(client, ...args));
 });
 
 client.on("message", message => {
-  if(message.content.includes('<@431271825763467264>'){
+  if(message.content.includes('<@431271825763467264>')){
 var embedz = new Discord.RichEmbed()
 .setAuthor('Oi, perdido?!', message.author.displayAvatarURL)
 .setColor(message.guild.member(message.author.id).displayHexColor)
