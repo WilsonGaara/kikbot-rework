@@ -9,7 +9,7 @@ exports.run = (client, message, args)  => {
 .setDescription('Olá! **'+message.author+'**, desfrute de meus comandos!\n🔗 **|** Minha guild: [Clique aqui!](https://discord.gg/sFQFK2Q)\n🔗 **|** OAUTH2: [Clique aqui!](https://discordapp.com/api/oauth2/authorize?client_id=431271825763467264&permissions=36826310&scope=bot)\n<:kikbotcuted:458296375793418240> **|** Meu website: [Clique aqui!](http://kikbot-.glitch.me/)\n<:dbl:460123322517028865> **|** Discord Bots: [Clique aqui!](https://discordbots.org/bot/431271825763467264)')
 .setFooter(`SOS | kikbot-@outlook.com`, message.author.avatarURL)
 message.channel.send({embed : embed})
-message.reply(':white_check_mark: **|** Uma lista de meus comandos foi enviada na sua **DM**!\nCaso não for enviada, ative as configurações de privacidade.\n**1** de **1** respostas enviadas, ('+ Math.round(client.ping) / 1000+' segundos)');
+message.reply(':white_check_mark: **|** Uma lista de meus comandos foi enviada na sua **DM**!\nCaso não for enviada, ative as configurações de privacidade.\n**5** de **5** respostas enviadas, ('+ Math.round(client.ping) / 1000+' segundos)');
 
 const embedb = new Discord.RichEmbed()
 .setTitle('🎨 Photoshop')
