@@ -85,12 +85,12 @@ message.channel.send({embed : embedz})
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
   
-    var texto = ['2', '1', '3', '10', '12', '17', '23', '230']
+    var texto = ['2', '1', '3', '10', '12', '17', '23', '230', 'fj', 'dfsuih', 'ghnfiu']
  const random = texto[Math.floor(Math.random() * texto.length)];
  const Discord2 = require('discord.js');
 var embed1 = new Discord2.RichEmbed()
 
-.setDescription('<:kikbotcuted:464125632058490901> **|** Vejo que está gostando de meus comandos, se ainda não divulgou o **kikbot** para seus amigos. Peço que por favor, me divulgue, isso ajuda bastante.\n[Clique aqui para me adicionar em algum servidor.](https://discordapp.com/api/oauth2/authorize?client_id=431271825763467264&permissions=36826310&scope=bot)\n<:dbl:460123322517028865> **|** Discord Bots: [Clique aqui!](https://discordbots.org/bot/431271825763467264)')
+.setDescription('<:kikbotcuted:458296375793418240> **|** Vejo que está gostando de meus comandos, se ainda não divulgou o **kikbot** para seus amigos. Peço que por favor, me divulgue, isso ajuda bastante.\n[Clique aqui para me adicionar em algum servidor.](https://discordapp.com/api/oauth2/authorize?client_id=431271825763467264&permissions=36826310&scope=bot)\n<:dbl:460123322517028865> **|** Discord Bots: [Clique aqui!](https://discordbots.org/bot/431271825763467264)')
 .setTimestamp()
 .setColor('BLUE')
 .setFooter('A bot for Discord, brazilian... Kikbot', client.user.avatarURL)
