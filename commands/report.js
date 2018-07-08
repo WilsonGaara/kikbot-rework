@@ -1,6 +1,6 @@
 exports.run = (client, message, args)  => {
 message.delete()
- let reason = args.slice(1).join(' ');
+ let reason = args.join(' ');
   let user = message.mentions.users.first();
 
   if (!message.mentions.users.first()) return message.reply('Mencione alguém')
