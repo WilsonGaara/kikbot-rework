@@ -8,7 +8,7 @@ exports.run = async(client, message, args) => {
     if (reason.length < 1) return message.reply('**:x: Faltou um motivo // Coloque alguém para eu banir!**');
 
 
-    if (!message.guild.member(user).kickable) return message.reply("**:x: Eu não posso banir este usuario!**");
+    if (!message.guild.member(user).bannable) return message.reply("**:x: Eu não posso banir este usuario!**");
     let member = await message.guild.member(user).ban()
 
 
