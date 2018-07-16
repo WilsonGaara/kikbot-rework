@@ -44,6 +44,8 @@ client.on('guildMemberRemove', member => {
   .setFooter(`ID do usuário: ${member.user.id} `, member.guild.iconURL)
   channel.send(embed2)
 });
+const cooldown = new Set()
+const cdseconds = 5;
 
 
 
@@ -82,9 +84,15 @@ message.channel.send({embed : embedz})
 
 
   try {
+if(cooldown.has(message.author.id)) {
+return message.reply(`Você precisa aguardar **${cdseconds}**`)
+}
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
-  
+  cooldown.add(message.author.id)
+   setTimeout(() => {
+cooldown.delete(message.author.id)
+   }, cdseconds * 1000)
     var texto = ['2', '1', '3', '10', '12', '17', '23', '230', 'fj', 'dfsuih', 'ghnfiu']
  const random = texto[Math.floor(Math.random() * texto.length)];
  const Discord2 = require('discord.js');
