@@ -105,7 +105,9 @@ var embed1 = new Discord2.RichEmbed()
 if(random == '2') return message.channel.send({embed : embed1})
   } catch (err) {
 message.channel.send('📁 **|** Vish... Não encontrei esse comando.').then(message => {
+   setTimeout(() => {
 message.delete()
+   }, 3400)
 })
     console.error(err);
   }
