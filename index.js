@@ -104,6 +104,9 @@ var embed1 = new Discord2.RichEmbed()
 .setFooter('A bot for Discord, brazilian... Kikbot', client.user.avatarURL)
 if(random == '2') return message.channel.send({embed : embed1})
   } catch (err) {
+message.channel.send('📁 **|** Vish... Não encontrei esse comando.').then(message => {
+message.delete()
+}
     console.error(err);
   }
 })
