@@ -106,7 +106,7 @@ if(random == '2') return message.channel.send({embed : embed1})
   } catch (err) {
 message.channel.send('📁 **|** Vish... Não encontrei esse comando.').then(message => {
 message.delete()
-}
+})
     console.error(err);
   }
 })
