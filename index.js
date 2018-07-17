@@ -85,7 +85,7 @@ message.channel.send({embed : embedz})
 
   try {
 if(cooldown.has(message.author.id)) {
-return message.reply(`Você precisa aguardar **${cdseconds}** para usar outro comando.`)
+return message.reply(`Você precisa aguardar **${cdseconds}s** para usar outro comando.`)
 }
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
@@ -104,6 +104,7 @@ var embed1 = new Discord2.RichEmbed()
 .setFooter('A bot for Discord, brazilian... Kikbot', client.user.avatarURL)
 if(random == '2') return message.channel.send({embed : embed1})
   } catch (err) {
+if (!message.content.startsWith(config.prefix)) return;
 message.channel.send('📁 **|** Vish... Não encontrei esse comando.').then(message => {
    setTimeout(() => {
 message.delete()
