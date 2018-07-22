@@ -41,7 +41,7 @@ message.author.send({embed : embede})
 var embedz = new Discord.RichEmbed()
 .setTitle(':warning: BETA')
 
-.setDescription('_Comandos que não estão completos ainda, use com cautela!_\n\nk!steamg `<id.do.jogo.steam>` **|** Mostra informações básicas de algum jogo na STEAM.\nk!play `<nome.da.música|url.da.música>` **|** Escute músicas com kikbot em algum canal de voz (Em teste)\nk!ppt `<escolha_pedra_papel_tesoura> **|** Jogue pedra papel e tesoura com o kikbot.')
+.setDescription('_Comandos que não estão completos ainda, use com cautela!_\n\nk!steamg `<id.do.jogo.steam>` **|** Mostra informações básicas de algum jogo na STEAM.\nk!play `<nome.da.música|url.da.música>` **|** Escute músicas com kikbot em algum canal de voz (Em teste)\nk!ppt `<escolha_pedra_papel_tesoura>` **|** Jogue pedra papel e tesoura com o kikbot.')
 .setColor(random)
 .setTimestamp()
 .setFooter(client.user.tag, message.author.displayAvatarURL)
