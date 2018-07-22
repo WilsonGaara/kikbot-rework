@@ -85,7 +85,11 @@ message.channel.send({embed : embedz})
 
   try {
 if(cooldown.has(message.author.id)) {
-return message.reply(`Você precisa aguardar **${cdseconds}s** para usar outro comando.`)
+return message.reply(`Você precisa aguardar **${cdseconds}s** para usar outro comando.`).then(msg => {
+   setTimeout(() => {
+msg.delete()
+   }, 5000)
+})
 }
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
