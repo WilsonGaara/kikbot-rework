@@ -63,7 +63,7 @@ client.on("message", message => {
 var embedz = new Discord.RichEmbed()
 .setAuthor('Oi, perdido?!', message.author.displayAvatarURL)
 .setColor(message.guild.member(message.author.id).displayHexColor)
-.setDescription('<:kikbotcuted:464125632058490901> **|** Se você está perdido em prefixos, meu prefixo é `k!`')
+.setDescription('<:kikbotcuted:458296375793418240> **|** Se você está perdido em prefixos, meu prefixo é `k!`')
 .setTimestamp()
 .setFooter('A bot for Discord, brazilian... Kikbot')
 message.channel.send({embed : embedz})
