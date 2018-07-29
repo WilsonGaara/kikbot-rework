@@ -39,7 +39,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
   .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `${client.user.avatarURL}`) 
 .setColor('#00ffff')
  
-      .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n**${current.temperature}°C Atual**\n${forecast.low}°C Minima\n${current.feelslike}°C Sens. térmica`, true)
+      .addField(':thermometer: Temperatura',`${forecast.high}°C Máxima\n**${current.temperature}°C Atual**\n${forecast.low}°C Minima\n${current.feelslike}°C Sens. térmica`, true)
   .addField(':wind_blowing_face: Velocidade do vento',current.winddisplay, true)
   .addField(`:date: Data`, current.date, true)
   .addField(`:cloud: Precipitação`, `${forecast.precip}%`, true)
@@ -47,6 +47,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
   .addField(':stars: Latitude', `${location.lat}°`, true)
   .addField(':stars: Longitude', `${location.long}°`, true)
 .addField('⏰ Fuso horário', `UTC${location.timezone}`, true)
+.addField('⏲ Tempo de observação', current.observationtime, true)
   .setTimestamp()
  
   .setFooter(`${current.observationpoint}`, current.imageUrl)
