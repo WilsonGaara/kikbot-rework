@@ -15,7 +15,7 @@ weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
 .setAuthor(message.author.tag, message.author.displayAvatarURL)
 .setColor('BLUE')
 .setTitle(':thinking: k!clima')
-.setDescription('Exibe as condições climáticas atual de um específico lugar!\n\n:information_desk_person: **Como usar:** k!clima cidade\n\n:book: **Exemplo:**\nk!clima `Caruaru`')
+.setDescription('Exibe as informações "climáticas" de um específico lugar!\n\n:information_desk_person: **Como usar:** k!clima cidade\n\n:book: **Exemplo:**\nk!clima `Caruaru`')
   .setFooter(`Utilitários • Website: kikbot-.glitch.me`, message.author.displayAvatarURL)
   if(args.length < 1) return message.channel.send({embed : embed2});
 
@@ -36,18 +36,18 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
       // Vai constar a variável "embed" que vai dizer a API do discord que o robô irá fazer um embed rico.
   const embed = new Discord.RichEmbed()
   .setDescription(`**${current.skytext}**`)
-  .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `${client.user.avatarURL}`) 
+  .setAuthor(`Informações "climáticas" para; ${location.name}`, `https://www.freeiconspng.com/uploads/weather-icon-png-16.png`) 
 .setColor('#00ffff')
  
       .addField(':thermometer: Temperatura',`${forecast.high}°C Máxima\n**${current.temperature}°C Atual**\n${forecast.low}°C Minima\n${current.feelslike}°C Sens. térmica`, true)
   .addField(':wind_blowing_face: Velocidade do vento',current.winddisplay, true)
-  .addField(`:date: Data`, current.date, true)
+  .addField(`:date: Data e dia`, `${current.date} - ${current.day}`, true)
   .addField(`:cloud: Precipitação`, `${forecast.precip}%`, true)
   .addField(':sweat_drops: Umidade', `${current.humidity}%`, true)
   .addField(':stars: Latitude', `${location.lat}°`, true)
   .addField(':stars: Longitude', `${location.long}°`, true)
 .addField('⏰ Fuso horário', `UTC${location.timezone}`, true)
-.addField('⏲ Tempo de observação', current.observationtime, true)
+.addField('🛰 Tempo de observação', current.observationtime, true)
   .setTimestamp()
  
   .setFooter(`${current.observationpoint}`, current.imageUrl)
