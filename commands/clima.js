@@ -37,20 +37,19 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
   const embed = new Discord.RichEmbed()
   .setDescription(`**${current.skytext}**`)
   .setAuthor(`Previsão do tempo para: ${location.name} - ${current.day}`, `${client.user.avatarURL}`) 
-.setColor('GOLD')
- .setThumbnail(current.imageUrl)
-      .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n${current.temperature}°C **Atual**\n${forecast.low}°C Minima`, true)
-  .addField(':cold_sweat:  Sensação Térmica', `${current.feelslike} °C`, true)
+.setColor('#00ffff')
+ .
+      .addField(':cloud_rain: Temperatura',`${forecast.high}°C Máxima\n**${current.temperature}°C Atual**\n${forecast.low}°C Minima\n${current.feelslike}°C Sens. térmica`, true)
   .addField(':wind_blowing_face: Velocidade do vento',current.winddisplay, true)
   .addField(`:date: Data`, current.date, true)
   .addField(`:cloud: Precipitação`, `${forecast.precip}%`, true)
   .addField(':sweat_drops: Umidade', `${current.humidity}%`, true)
   .addField(':stars: Latitude', `${location.lat}°`, true)
   .addField(':stars: Longitude', `${location.long}°`, true)
-
+.addField('⏰ Fuso horário', `UTC${location.timezone}`, true)
   .setTimestamp()
  
-  .setFooter(`Utilidade`, message.author.displayAvatarURL)
+  .setFooter(`${current.observationpoint}`, current.imageUrl)
  
   message.channel.send({embed});
 
@@ -64,7 +63,7 @@ const config = {
 
 const accuweatherSimple = require('accuweather-simple')(config);
 
-message.channel.send('**QUER SABER MAIS?**').then(newMsg => {
+message.channel.send('**Reaja com ✅ para mais informações.**').then(newMsg => {
     newMsg.react('✅');
  const collector = newMsg.createReactionCollector((r, u) => (r.emoji.name === '✅') && u.id == message.author.id);
 
@@ -74,7 +73,7 @@ message.channel.send('**QUER SABER MAIS?**').then(newMsg => {
             const Discord = require('discord.js');
           accuweatherSimple.getWeather(`${args.join(` `)}`).then(result => newMsg.edit('**Previsão, olhar para o futuro** \n`'+ result+'`'))
           
-          .catch(error => newMsg.edit('<:err:449743511391305748> **|** '+message.author+' **O AccuWeather não encontrou a cidade, exibindo apenas informações da MSN Weather. (Isso também pode acontecer pelo limite de pedidos ao AccuWeather que são 50 por dia. Eles fazem isso para pessoas que não pagam não usarem muita banda.**'));
+          .catch(error => newMsg.edit('<:err:449743511391305748> **|** '+message.author+' Aconteceu algo que já foi identificado (limite de pedidos ao servidor por dia) 😢 Desculpe. '));
       //Oops! O AccuWeather não conseguiu encontrar a cidade. Enquanto isso só está as informações de MSN
       
             r.users.filter(u => r.remove(u.id !== client.user.id));
@@ -85,8 +84,7 @@ message.channel.send('**QUER SABER MAIS?**').then(newMsg => {
   });
 });
         
-//accuweatherSimple.getWeather(`${args.join(` `)}`).then(result => message.reply('**Previsão, olhar para o futuro** \n` '+ result))
-        
+
 })
 }
 }
