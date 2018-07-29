@@ -36,7 +36,7 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
       // Vai constar a variável "embed" que vai dizer a API do discord que o robô irá fazer um embed rico.
   const embed = new Discord.RichEmbed()
   .setDescription(`**${current.skytext}**`)
-  .setAuthor(`Informações "climáticas" para; ${location.name}`, `https://www.freeiconspng.com/uploads/weather-icon-png-16.png`) 
+  .setAuthor(`Informações "climáticas" para: ${location.name}`, `https://www.freeiconspng.com/uploads/weather-icon-png-16.png`) 
 .setColor('#00ffff')
  
       .addField(':thermometer: Temperatura',`${forecast.high}°C Máxima\n**${current.temperature}°C Atual**\n${forecast.low}°C Minima\n${current.feelslike}°C Sens. térmica`, true)
