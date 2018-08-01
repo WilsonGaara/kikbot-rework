@@ -9,6 +9,7 @@
     "discord.js": "^11.3.2",
     "google": "^2.1.0",
     "util": "^0.11.0",
+    "os-utils": "^0.0.14",
     "google-translate-api": "^2.3.0",
     "jimp": "^0.2.28",
     "ytdl-core": "^0.20.4",
