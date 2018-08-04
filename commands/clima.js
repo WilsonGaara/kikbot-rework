@@ -35,8 +35,8 @@ if (result === undefined || result.length === 0) return message.channel.send('<:
 
      // Vai constar a variável "embed" que vai dizer a API do discord que o robô irá fazer um embed rico.
  const embed = new Discord.RichEmbed()
- .setDescription(`**${current.skytext}**`)
- .setAuthor(`Informações "climáticas" para: ${location.name}`, `http://mmls.mmu.edu.my/wordpress/1151100763/wp-content/uploads/sites/29663/2016/02/iOS-7-weather-app-icon-500x500.png`) 
+ .setDescription(`[**${current.skytext}**](https://www.msn.com/pt-br/clima)`)
+ .setAuthor(`MSN Clima de: ${location.name}`, `https://upload.wikimedia.org/wikipedia/commons/f/fd/MSN_Weather_icon.png`) 
 .setColor('#00ffff')
 
      .addField(':thermometer: Temperatura',`${forecast.high}°C Máxima\n**${current.temperature}°C Atual**\n${forecast.low}°C Minima\n${current.feelslike}°C Sens. térmica`, true)
@@ -63,46 +63,29 @@ const config = {
 
 
 const accuweatherSimple = require('accuweather-simple')(config);
-var embclima = new Discord.RichEmbed()
-.setAuthor('AccuWeather', `https://apkapps.com/upload/apps/main_image/thumb/7BB1gD1EJ9g2mcqHfAtMuP0Z5Zg1a1syl4l8GTGIXFUUUpTSbg_txXw99YAVUZ9B8A=w300.png`)
-.setDescription("Reaja com: ✅ para mais informações")
-.setTimestamp()
-.setFooter(`A pedido de: ${message.author.username}`, message.author.displayAvatarURL)
-message.channel.send({embclima}).then(newMsg => {
-   newMsg.react('✅');
+message.channel.send('**Reaja com ✅ para mais informações.**').then(newMsg => {
+  newMsg.react('✅');
 const collector = newMsg.createReactionCollector((r, u) => (r.emoji.name === '✅') && u.id == message.author.id);
-
    collector.on('collect', r => {
-       switch(r.emoji.name) {
-           case '✅':
-           const Discord = require('discord.js');
-   accuweatherSimple.getWeather(`${args.join(` `)}`).then(result => {    
-         var embclima2 = new Discord.RichEmbed()
-.setAuthor('AccuWeather', `https://apkapps.com/upload/apps/main_image/thumb/7BB1gD1EJ9g2mcqHfAtMuP0Z5Zg1a1syl4l8GTGIXFUUUpTSbg_txXw99YAVUZ9B8A=w300.png`)
-.setDescription('**Previsão, olhar para o futuro** \n`'+ result+'`')
-.setColor("GREEN")
-.setTimestamp()
-.setFooter(`A pedido de: ${message.author.username}`, message.author.displayAvatarURL)
-  newMsg.edit({embclima2})
-var erremb = new Discord.RichEmbed()
-.setColor("RED")
-.setDescription('<:err:449743511391305748> **|** '+message.author+' Aconteceu algo que já foi identificado (limite de pedidos ao servidor por dia) 😢 Desculpe. ')
-.setTimestamp()
-.setFooter("Desculpe 😢", client.user.avatarURL)
-         .catch(error => newMsg.edit(erremb));
-   })
-     //Oops! O AccuWeather não conseguiu encontrar a cidade. Enquanto isso só está as informações de MSN
+      switch(r.emoji.name) {
+          case '✅':
+          const Discord = require('discord.js');
+        accuweatherSimple.getWeather(`${args.join(` `)}`).then(result => newMsg.edit('**Previsão, olhar para o futuro** \n`'+ result+'`'))
+        
+        .catch(error => newMsg.edit('<:err:449743511391305748> **|** '+message.author+' Aconteceu algo que já foi identificado (limite de pedidos ao servidor por dia) 😢 Desculpe. '));
+    //Oops! O AccuWeather não conseguiu encontrar a cidade. Enquanto isso só está as informações de MSN
+    
+          r.users.filter(u => r.remove(u.id !== client.user.id));
+                  
+          break;
+       
+    };
+});
      
-           r.users.filter(u => r.remove(u.id !== client.user.id));
-                   
-           break;
-   
-     
- }})
 });
        
 
-})
-}
-}
+});
+};
+};
 
