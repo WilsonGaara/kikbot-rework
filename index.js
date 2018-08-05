@@ -16,34 +16,7 @@ snek.get('https://gist.githubusercontent.com/BlueSlimee/bdd095b7b64e5798d8ba52eb
   
 
 })
-client.on('guildMemberAdd', member => {
-  if(member.guild.id !== "425864977996578816") return;
- 
-  var channel = client.channels.get("425865939691765760");
-   if (!channel) return;
 
-  var embed = new Discord.RichEmbed()
-  .setAuthor(member.user.tag, member.user.displayAvatarURL)
-  .setColor('GREEN')
-  .setDescription('**Bem-vindo(a) ao servidor!**')
-  .setTimestamp()
-  .setFooter(`ID do usuário: ${member.user.id} `, member.guild.iconURL)
-  channel.send({embed : embed})
-});
-client.on('guildMemberRemove', member => {
-   if(member.guild.id !== "425864977996578816") return;
- 
-  var channel = client.channels.get("425865939691765760");
-   if (!channel) return;
-
-  var embed2 = new Discord.RichEmbed()
-  .setAuthor(member.user.tag, member.user.displayAvatarURL)
-  .setColor('RED')
-  .setDescription('**Tchau! Tomara que nada de ruim esteja a acontecer :confused:**')
-  .setTimestamp()
-  .setFooter(`ID do usuário: ${member.user.id} `, member.guild.iconURL)
-  channel.send(embed2)
-});
 const cooldown = new Set()
 const cdseconds = 5;
 
